@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova Clean | Carrito</title>
+  <title>Nova Clean | Productos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,13 +11,10 @@
     :root {
       --bg-dark: #07111f;
       --bg-dark-2: #0d1b2d;
-      --white: #ffffff;
+      --line: rgba(255,255,255,0.12);
       --text-dark: #0f172a;
       --text-gray: #5b6472;
-      --text-soft: #c6d2e2;
-      --line: rgba(255,255,255,0.12);
-      --line-soft: rgba(15,23,42,0.10);
-      --success: #00a650;
+      --white: #ffffff;
       --shadow-xl: 0 30px 100px rgba(2, 8, 23, 0.35);
       --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.12);
       --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
@@ -36,7 +33,7 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 35%, #f4f7fb 35%, #f8fbff 100%);
+      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 20%, #f4f7fb 20%, #f8fbff 100%);
       color: var(--text-dark);
       overflow-x: hidden;
     }
@@ -51,8 +48,7 @@
       color: inherit;
     }
 
-    button,
-    input {
+    button {
       font: inherit;
     }
 
@@ -155,6 +151,23 @@
       width: 100%;
     }
 
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+      color: white;
+      cursor: pointer;
+    }
+
     .btn {
       display: inline-flex;
       align-items: center;
@@ -196,523 +209,166 @@
       background: #172136;
     }
 
-    .btn-mercado {
-      background: #009ee3;
-      color: white;
-      box-shadow: 0 12px 30px rgba(0,158,227,0.28);
+    .section {
+      padding: 72px 0 110px;
     }
 
-    .btn-mercado:hover {
-      background: #0aa8ee;
-    }
-
-    .cart-section {
-      padding: 84px 0 110px;
-    }
-
-    .page-head {
+    .section-head {
       display: flex;
       align-items: end;
       justify-content: space-between;
       gap: 24px;
-      margin-bottom: 36px;
-      color: white;
+      margin-bottom: 46px;
     }
 
-    .page-head small {
-      display: block;
-      color: rgba(255,255,255,0.56);
+    .section-kicker {
+      color: #6f7b89;
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.32em;
       font-weight: 700;
-      margin-bottom: 14px;
     }
 
-    .page-head h1 {
-      font-size: clamp(36px, 5vw, 64px);
-      line-height: 0.98;
-      letter-spacing: -0.05em;
-      max-width: 760px;
-    }
-
-    .page-head p {
-      margin-top: 18px;
-      color: var(--text-soft);
-      font-size: 17px;
-      line-height: 1.9;
-      max-width: 760px;
-    }
-
-    .cart-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.52fr);
-      gap: 28px;
-      align-items: start;
-    }
-
-    .panel {
-      background: white;
-      border-radius: 34px;
-      border: 1px solid rgba(15,23,42,0.08);
-      box-shadow: var(--shadow-lg);
-      overflow: hidden;
-    }
-
-    .cart-panel-header {
-      padding: 28px 30px;
-      border-bottom: 1px solid rgba(15,23,42,0.08);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .cart-panel-header h2 {
-      font-size: 30px;
-      letter-spacing: -0.03em;
+    .section-head h2 {
+      margin-top: 14px;
+      font-size: clamp(36px, 4vw, 58px);
+      line-height: 1;
+      letter-spacing: -0.04em;
       color: #0f172a;
     }
 
-    .cart-panel-header p {
-      margin-top: 8px;
+    .section-head p {
+      margin-top: 18px;
       color: var(--text-gray);
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 17px;
+      line-height: 1.9;
+      max-width: 720px;
     }
 
-    .cart-badge {
-      min-width: 56px;
-      height: 56px;
-      padding: 0 18px;
-      border-radius: 20px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: #0f172a;
-      color: white;
-      font-size: 18px;
-      font-weight: 800;
-    }
-
-    .cart-items {
-      padding: 18px;
+    .products-grid {
       display: grid;
-      gap: 16px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
     }
 
-    .cart-item {
-      display: grid;
-      grid-template-columns: 112px minmax(0, 1fr) auto;
-      gap: 18px;
-      padding: 18px;
-      border-radius: 28px;
+    .product-card {
+      background: white;
       border: 1px solid rgba(15,23,42,0.08);
-      background: #fbfcfe;
-      align-items: center;
-      transition: 0.25s ease;
-    }
-
-    .cart-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 14px 36px rgba(15,23,42,0.08);
-    }
-
-    .item-thumb {
-      width: 112px;
-      height: 112px;
-      border-radius: 22px;
+      border-radius: 32px;
       overflow: hidden;
-      background: #e8eef6;
-      flex-shrink: 0;
+      box-shadow: var(--shadow-lg);
+      transition: 0.3s ease;
+      display: flex;
+      flex-direction: column;
     }
 
-    .item-thumb img {
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 30px 80px rgba(15,23,42,0.16);
+    }
+
+    .product-media {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      overflow: hidden;
+    }
+
+    .product-media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.7s ease;
     }
 
-    .item-info {
-      min-width: 0;
+    .product-card:hover .product-media img {
+      transform: scale(1.08);
     }
 
-    .item-tag {
-      display: inline-flex;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: #eef4fa;
-      color: #5a6a7f;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-    }
-
-    .item-info h3 {
-      font-size: 22px;
-      line-height: 1.15;
-      color: #0f172a;
-      letter-spacing: -0.03em;
-    }
-
-    .item-info p {
-      margin-top: 10px;
-      color: var(--text-gray);
-      font-size: 14px;
-      line-height: 1.8;
-      max-width: 520px;
-    }
-
-    .item-meta {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-    }
-
-    .item-price,
-    .item-unit {
-      font-size: 14px;
-      color: #526071;
-      background: #f2f6fb;
-      border-radius: 999px;
-      padding: 10px 14px;
-      font-weight: 600;
-    }
-
-    .item-actions {
-      display: flex;
-      flex-direction: column;
-      align-items: end;
-      gap: 14px;
-      min-width: 158px;
-    }
-
-    .qty-control {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px;
-      border-radius: 999px;
-      background: #eef4fa;
-      border: 1px solid rgba(15,23,42,0.08);
-    }
-
-    .qty-btn {
-      width: 34px;
-      height: 34px;
-      border: none;
-      border-radius: 50%;
-      background: white;
-      color: #0f172a;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(15,23,42,0.08);
-    }
-
-    .qty-number {
-      min-width: 30px;
-      text-align: center;
-      font-size: 15px;
-      font-weight: 700;
-      color: #0f172a;
-    }
-
-    .item-total {
-      font-size: 28px;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.04em;
-    }
-
-    .remove-btn {
-      border: none;
-      background: transparent;
-      color: #7d8794;
-      font-size: 13px;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .remove-btn:hover {
-      color: #0f172a;
-    }
-
-    .summary-panel {
-      position: sticky;
-      top: 110px;
-      background: linear-gradient(180deg, #0b1424 0%, #07111f 100%);
-      color: white;
-      border-radius: 34px;
-      overflow: hidden;
-      border: 1px solid rgba(255,255,255,0.08);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .summary-top {
-      position: relative;
-      padding: 28px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-      overflow: hidden;
-    }
-
-    .summary-top::before,
-    .summary-top::after {
+    .product-media::after {
       content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(56px);
-      pointer-events: none;
-      opacity: 0.34;
-    }
-
-    .summary-top::before {
-      width: 180px;
-      height: 180px;
-      background: rgba(255,255,255,0.10);
-      top: -90px;
-      right: -60px;
-    }
-
-    .summary-top::after {
-      width: 140px;
-      height: 140px;
-      background: rgba(0,158,227,0.18);
-      bottom: -70px;
-      left: -40px;
-    }
-
-    .summary-top small {
-      display: block;
-      color: rgba(255,255,255,0.56);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.32em;
-      font-weight: 700;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .summary-top h3 {
-      font-size: 34px;
-      line-height: 1;
-      letter-spacing: -0.04em;
-      position: relative;
-      z-index: 2;
-    }
-
-    .summary-top p {
-      margin-top: 14px;
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
-      line-height: 1.8;
-      position: relative;
-      z-index: 2;
-    }
-
-    .summary-body {
-      padding: 24px 28px 28px;
-      display: grid;
-      gap: 18px;
-    }
-
-    .summary-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
-    }
-
-    .summary-row strong {
-      color: white;
-      font-size: 15px;
-    }
-
-    .summary-row.total {
-      padding-top: 10px;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      font-size: 18px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .summary-row.total strong {
-      font-size: 28px;
-      letter-spacing: -0.04em;
-    }
-
-    .payment-box {
-      margin-top: 8px;
-      border-radius: 28px;
-      padding: 20px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .payment-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-bottom: 14px;
-    }
-
-    .payment-head h4 {
-      font-size: 18px;
-      color: white;
-    }
-
-    .mp-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: rgba(0,158,227,0.16);
-      color: #8edcff;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      border: 1px solid rgba(0,158,227,0.22);
-    }
-
-    .payment-demo {
-      border-radius: 22px;
-      background: white;
-      padding: 18px;
-      box-shadow: 0 16px 34px rgba(2,8,23,0.22);
-    }
-
-    .mp-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 16px;
-    }
-
-    .mp-brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: #0f172a;
-      font-weight: 800;
-      font-size: 15px;
-    }
-
-    .mp-logo {
-      width: 38px;
-      height: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #00b1ea, #0d7cff);
-      position: relative;
-      flex-shrink: 0;
-    }
-
-    .mp-logo::before {
-      content: "$";
       position: absolute;
       inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: linear-gradient(180deg, rgba(15,23,42,0.00) 15%, rgba(15,23,42,0.66) 100%);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      z-index: 2;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(7,17,31,0.56);
+      border: 1px solid rgba(255,255,255,0.12);
       color: white;
-      font-weight: 800;
-      font-size: 18px;
-    }
-
-    .mp-status {
-      color: var(--success);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-    }
-
-    .mp-card {
-      border-radius: 18px;
-      padding: 18px;
-      background: linear-gradient(135deg, #ecf8ff, #ffffff);
-      border: 1px solid rgba(15,23,42,0.08);
-    }
-
-    .mp-card small {
-      display: block;
-      color: #6a7380;
       font-size: 11px;
+      font-weight: 700;
       letter-spacing: 0.22em;
       text-transform: uppercase;
-      font-weight: 800;
-      margin-bottom: 10px;
+      backdrop-filter: blur(12px);
     }
 
-    .mp-card strong {
-      display: block;
-      font-size: 26px;
-      letter-spacing: -0.04em;
-      color: #0f172a;
-      margin-bottom: 8px;
-    }
-
-    .mp-card p {
-      color: #5c6775;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .payment-features {
-      margin-top: 14px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .payment-features li {
-      list-style: none;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .payment-features li::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #00b1ea;
-      box-shadow: 0 0 12px rgba(0,177,234,0.7);
-      flex-shrink: 0;
-    }
-
-    .summary-actions {
-      display: grid;
-      gap: 12px;
-      margin-top: 4px;
-    }
-
-    .empty-state {
-      padding: 34px 26px 40px;
-      text-align: center;
-      color: #657083;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .empty-state strong {
-      display: block;
-      color: #0f172a;
-      font-size: 24px;
-      margin-bottom: 10px;
+    .product-title {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+      z-index: 2;
+      color: white;
+      font-size: 30px;
+      line-height: 1.04;
+      font-weight: 700;
       letter-spacing: -0.03em;
+    }
+
+    .product-content {
+      padding: 24px 24px 26px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .product-content p {
+      color: var(--text-gray);
+      font-size: 14px;
+      line-height: 1.85;
+      min-height: 104px;
+      flex: 1;
+    }
+
+    .product-bottom {
+      margin-top: 18px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .product-price {
+      font-size: 26px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.04em;
+    }
+
+    .add-cart-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(15,23,42,0.12);
+      background: #0f172a;
+      color: white;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .add-cart-btn:hover {
+      transform: translateY(-2px);
+      background: #162237;
     }
 
     .toast {
@@ -739,37 +395,46 @@
       opacity: 1;
     }
 
-    @media (max-width: 1180px) {
-      .cart-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .summary-panel {
-        position: relative;
-        top: 0;
+    @media (max-width: 1200px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
-    @media (max-width: 920px) {
+    @media (max-width: 980px) {
       .nav {
+        position: fixed;
+        top: 86px;
+        left: 20px;
+        right: 20px;
         display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 24px;
+        background: rgba(7, 17, 31, 0.96);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 28px;
+        box-shadow: var(--shadow-xl);
       }
 
-      .page-head {
+      .nav.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section-head {
         flex-direction: column;
         align-items: flex-start;
       }
 
-      .cart-item {
-        grid-template-columns: 90px minmax(0,1fr);
-      }
-
-      .item-actions {
-        grid-column: 1 / -1;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        min-width: 0;
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -791,29 +456,8 @@
         letter-spacing: 0.22em;
       }
 
-      .cart-section {
-        padding: 64px 0 90px;
-      }
-
-      .cart-panel-header,
-      .summary-top,
-      .summary-body {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      .cart-item {
+      .products-grid {
         grid-template-columns: 1fr;
-      }
-
-      .item-thumb {
-        width: 100%;
-        height: 220px;
-      }
-
-      .item-actions {
-        flex-direction: column;
-        align-items: flex-start;
       }
     }
   </style>
@@ -834,117 +478,240 @@
         </div>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" id="mainNav">
         <a href="index.html">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="carrito.html" class="active">Carrito</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="carrito.html" id="headerCartNav">Carrito</a>
       </nav>
 
-      <a href="productos.html" class="btn btn-secondary">Seguir comprando</a>
+      <div class="header-actions">
+        <a href="carrito.html" class="btn btn-secondary" id="headerCartButton">Ver Carrito</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
     </div>
   </header>
 
   <main>
-    <section class="cart-section">
+    <section class="section">
       <div class="container">
-        <div class="page-head">
+        <div class="section-head">
           <div>
-            <small>Checkout</small>
-            <h1>Tu carrito de compra</h1>
+            <div class="section-kicker">Portafolio</div>
+            <h2>Nuestras líneas de productos</h2>
+            <p>La grilla está pensada para que el cliente vea todo ordenado, pueda sumar artículos y pasar después al carrito sin romper la estética general del sitio.</p>
           </div>
+          <a href="carrito.html" class="btn btn-dark">Ver carrito</a>
         </div>
 
-        <div class="cart-layout">
-          <section class="panel">
-            <div class="cart-panel-header">
-              <div>
-                <h2>Productos seleccionados</h2>
-                <p>Listado visual del pedido con imagen, cantidad, precio unitario y total por producto.</p>
-              </div>
-              <div class="cart-badge" id="cartCount">0</div>
+        <div class="products-grid">
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=1200&q=80" alt="Lavandina Premium" />
+              <div class="product-badge">01</div>
+              <h3 class="product-title">Lavandina Premium</h3>
             </div>
-
-            <div class="cart-items" id="cartItems"></div>
-          </section>
-
-          <aside class="summary-panel">
-            <div class="summary-top">
-              <small>Resumen</small>
-              <h3>Finalizar compra</h3>
-              <p>Diseñado para verse sólido, claro y confiable, con una demo visual de Mercado Pago lista para presentar al cliente.</p>
-            </div>
-
-            <div class="summary-body">
-              <div class="summary-row">
-                <span>Subtotal</span>
-                <strong id="subtotalPrice">$0</strong>
-              </div>
-              <div class="summary-row">
-                <span>Envío estimado</span>
-                <strong id="shippingPrice">$0</strong>
-              </div>
-              <div class="summary-row">
-                <span>Bonificación demo</span>
-                <strong id="discountPrice">-$0</strong>
-              </div>
-              <div class="summary-row total">
-                <span>Total</span>
-                <strong id="totalPrice">$0</strong>
-              </div>
-
-              <div class="payment-box">
-                <div class="payment-head">
-                  <h4>Pago online</h4>
-                  <div class="mp-pill">Mercado Pago Demo</div>
-                </div>
-
-                <div class="payment-demo">
-                  <div class="mp-top">
-                    <div class="mp-brand">
-                      <div class="mp-logo"></div>
-                      Mercado Pago
-                    </div>
-                    <div class="mp-status">Activo</div>
-                  </div>
-
-                  <div class="mp-card">
-                    <small>Checkout Pro</small>
-                    <strong id="mpAmount">$0</strong>
-                    <p>Simulación visual de un checkout integrado para mostrar medios de pago, cuotas y experiencia final del usuario.</p>
-                  </div>
-                </div>
-
-                <ul class="payment-features">
-                  <li>Tarjetas de crédito y débito</li>
-                  <li>Saldo en cuenta y transferencias</li>
-                  <li>Pago seguro con redirección al checkout</li>
-                </ul>
-              </div>
-
-              <div class="summary-actions">
-                <button class="btn btn-mercado" id="mercadoPagoBtn">Pagar con Mercado Pago</button>
-                <button class="btn btn-dark" id="clearCartBtn">Vaciar carrito</button>
+            <div class="product-content">
+              <p>Desinfección profunda para hogar, oficinas y superficies de alto tránsito con presentación comercial profesional.</p>
+              <div class="product-bottom">
+                <div class="product-price">$4.500</div>
+                <button class="add-cart-btn" data-id="1" data-name="Lavandina Premium" data-price="4500" data-image="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
               </div>
             </div>
-          </aside>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1200&q=80" alt="Detergente Industrial" />
+              <div class="product-badge">02</div>
+              <h3 class="product-title">Detergente Industrial</h3>
+            </div>
+            <div class="product-content">
+              <p>Alta concentración para limpieza intensiva en comercios, gastronomía, depósitos y operaciones de uso continuo.</p>
+              <div class="product-bottom">
+                <div class="product-price">$6.200</div>
+                <button class="add-cart-btn" data-id="2" data-name="Detergente Industrial" data-price="6200" data-image="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=1200&q=80" alt="Jabón Líquido Antibacterial" />
+              <div class="product-badge">03</div>
+              <h3 class="product-title">Jabón Líquido Antibacterial</h3>
+            </div>
+            <div class="product-content">
+              <p>Ideal para baños, oficinas y espacios corporativos donde la higiene y la presentación son una prioridad.</p>
+              <div class="product-bottom">
+                <div class="product-price">$3.900</div>
+                <button class="add-cart-btn" data-id="3" data-name="Jabón Líquido Antibacterial" data-price="3900" data-image="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=1200&q=80" alt="Pack Descartables Pro" />
+              <div class="product-badge">04</div>
+              <h3 class="product-title">Pack Descartables Pro</h3>
+            </div>
+            <div class="product-content">
+              <p>Guantes, servilletas y descartables para reposición rápida con una presentación visual limpia y ordenada.</p>
+              <div class="product-bottom">
+                <div class="product-price">$5.700</div>
+                <button class="add-cart-btn" data-id="4" data-name="Pack Descartables Pro" data-price="5700" data-image="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=80" alt="Desengrasante Pro" />
+              <div class="product-badge">05</div>
+              <h3 class="product-title">Desengrasante Pro</h3>
+            </div>
+            <div class="product-content">
+              <p>Fórmula intensiva para cocinas, superficies de trabajo y áreas con suciedad pesada o grasa acumulada.</p>
+              <div class="product-bottom">
+                <div class="product-price">$4.900</div>
+                <button class="add-cart-btn" data-id="5" data-name="Desengrasante Pro" data-price="4900" data-image="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=1200&q=80" alt="Limpiavidrios Ultra" />
+              <div class="product-badge">06</div>
+              <h3 class="product-title">Limpiavidrios Ultra</h3>
+            </div>
+            <div class="product-content">
+              <p>Brillo parejo y secado rápido para vidrios, espejos, mostradores y superficies transparentes de alto uso.</p>
+              <div class="product-bottom">
+                <div class="product-price">$3.400</div>
+                <button class="add-cart-btn" data-id="6" data-name="Limpiavidrios Ultra" data-price="3400" data-image="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=1200&q=80" alt="Alcohol Sanitizante" />
+              <div class="product-badge">07</div>
+              <h3 class="product-title">Alcohol Sanitizante</h3>
+            </div>
+            <div class="product-content">
+              <p>Ideal para espacios compartidos, mostradores, oficinas y puntos de atención con foco en higiene constante.</p>
+              <div class="product-bottom">
+                <div class="product-price">$2.800</div>
+                <button class="add-cart-btn" data-id="7" data-name="Alcohol Sanitizante" data-price="2800" data-image="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Suavizante Textil" />
+              <div class="product-badge">08</div>
+              <h3 class="product-title">Suavizante Textil</h3>
+            </div>
+            <div class="product-content">
+              <p>Fragancia duradera y cuidado textil para ropa de trabajo, blancos, lavanderías y uso comercial continuo.</p>
+              <div class="product-bottom">
+                <div class="product-price">$5.300</div>
+                <button class="add-cart-btn" data-id="8" data-name="Suavizante Textil" data-price="5300" data-image="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=1200&q=80" alt="Limpiador Multiuso" />
+              <div class="product-badge">09</div>
+              <h3 class="product-title">Limpiador Multiuso</h3>
+            </div>
+            <div class="product-content">
+              <p>Solución versátil para escritorios, muebles, barras, superficies plásticas y limpieza diaria general.</p>
+              <div class="product-bottom">
+                <div class="product-price">$3.600</div>
+                <button class="add-cart-btn" data-id="9" data-name="Limpiador Multiuso" data-price="3600" data-image="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=1200&q=80" alt="Guantes de Nitrilo" />
+              <div class="product-badge">10</div>
+              <h3 class="product-title">Guantes de Nitrilo</h3>
+            </div>
+            <div class="product-content">
+              <p>Protección cómoda y resistente para limpieza, manipulación de productos y tareas de uso prolongado.</p>
+              <div class="product-bottom">
+                <div class="product-price">$7.100</div>
+                <button class="add-cart-btn" data-id="10" data-name="Guantes de Nitrilo" data-price="7100" data-image="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1632818924360-68d4994cfdb2?auto=format&fit=crop&w=1200&q=80" alt="Papel Institucional" />
+              <div class="product-badge">11</div>
+              <h3 class="product-title">Papel Institucional</h3>
+            </div>
+            <div class="product-content">
+              <p>Rendimiento alto para baños de oficinas, locales, centros de atención y espacios con gran circulación.</p>
+              <div class="product-bottom">
+                <div class="product-price">$8.400</div>
+                <button class="add-cart-btn" data-id="11" data-name="Papel Institucional" data-price="8400" data-image="https://images.unsplash.com/photo-1632818924360-68d4994cfdb2?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="product-card">
+            <div class="product-media">
+              <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1200&q=80" alt="Bolsas Reforzadas" />
+              <div class="product-badge">12</div>
+              <h3 class="product-title">Bolsas Reforzadas</h3>
+            </div>
+            <div class="product-content">
+              <p>Mayor resistencia para residuos pesados en locales, industrias, consorcios y servicios de limpieza profesional.</p>
+              <div class="product-bottom">
+                <div class="product-price">$6.800</div>
+                <button class="add-cart-btn" data-id="12" data-name="Bolsas Reforzadas" data-price="6800" data-image="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="toast" id="toast"></div>
+  <div class="toast" id="cartToast">Producto agregado al carrito</div>
 
   <script>
-    const cartItems = document.getElementById('cartItems');
-    const cartCount = document.getElementById('cartCount');
-    const subtotalPrice = document.getElementById('subtotalPrice');
-    const shippingPrice = document.getElementById('shippingPrice');
-    const discountPrice = document.getElementById('discountPrice');
-    const totalPrice = document.getElementById('totalPrice');
-    const mpAmount = document.getElementById('mpAmount');
-    const clearCartBtn = document.getElementById('clearCartBtn');
-    const mercadoPagoBtn = document.getElementById('mercadoPagoBtn');
-    const toast = document.getElementById('toast');
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    const headerCartButton = document.getElementById('headerCartButton');
+    const headerCartNav = document.getElementById('headerCartNav');
+    const cartToast = document.getElementById('cartToast');
+
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('open');
+      });
+
+      mainNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mainNav.classList.remove('open');
+        });
+      });
+    }
 
     function getCart() {
       const savedCart = localStorage.getItem('novaCleanCart');
@@ -955,157 +722,50 @@
       localStorage.setItem('novaCleanCart', JSON.stringify(cart));
     }
 
-    function formatPrice(value) {
-      return new Intl.NumberFormat('es-AR', {
-        style: 'currency',
-        currency: 'ARS',
-        maximumFractionDigits: 0
-      }).format(value);
+    function updateCartButton() {
+      const cart = getCart();
+      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const text = totalItems > 0 ? `Ver Carrito (${totalItems})` : 'Ver Carrito';
+      if (headerCartButton) headerCartButton.textContent = text;
+      if (headerCartNav) headerCartNav.textContent = totalItems > 0 ? `Carrito (${totalItems})` : 'Carrito';
     }
 
     function showToast(message) {
-      toast.textContent = message;
-      toast.classList.add('show');
+      cartToast.textContent = message;
+      cartToast.classList.add('show');
       clearTimeout(window.toastTimer);
       window.toastTimer = setTimeout(() => {
-        toast.classList.remove('show');
+        cartToast.classList.remove('show');
       }, 1800);
     }
 
-    function increaseQty(id) {
+    function addToCart(product) {
       const cart = getCart();
-      const item = cart.find(product => product.id === id);
-      if (!item) return;
-      item.quantity += 1;
-      saveCart(cart);
-      renderCart();
-    }
+      const existing = cart.find(item => item.id === product.id);
 
-    function decreaseQty(id) {
-      const cart = getCart();
-      const item = cart.find(product => product.id === id);
-      if (!item) return;
-
-      if (item.quantity > 1) {
-        item.quantity -= 1;
+      if (existing) {
+        existing.quantity += 1;
       } else {
-        const index = cart.findIndex(product => product.id === id);
-        cart.splice(index, 1);
+        cart.push({ ...product, quantity: 1 });
       }
 
       saveCart(cart);
-      renderCart();
+      updateCartButton();
+      showToast(`${product.name} agregado al carrito`);
     }
 
-    function removeItem(id) {
-      const cart = getCart().filter(item => item.id !== id);
-      saveCart(cart);
-      renderCart();
-      showToast('Producto eliminado del carrito');
-    }
-
-    function renderEmpty() {
-      cartItems.innerHTML = `
-        <div class="empty-state">
-          <strong>Tu carrito está vacío</strong>
-          Todavía no agregaste productos desde la página de catálogo.<br>
-          Cuando sumes artículos, se van a mostrar acá con imagen, cantidad y resumen de compra.
-        </div>
-      `;
-
-      cartCount.textContent = '0';
-      subtotalPrice.textContent = formatPrice(0);
-      shippingPrice.textContent = formatPrice(0);
-      discountPrice.textContent = `-${formatPrice(0)}`;
-      totalPrice.textContent = formatPrice(0);
-      mpAmount.textContent = formatPrice(0);
-    }
-
-    function renderCart() {
-      const cart = getCart();
-
-      if (!cart.length) {
-        renderEmpty();
-        return;
-      }
-
-      cartItems.innerHTML = '';
-
-      cart.forEach((item, index) => {
-        const totalItem = item.price * item.quantity;
-        const row = document.createElement('article');
-        row.className = 'cart-item';
-        row.innerHTML = `
-          <div class="item-thumb">
-            <img src="${item.image}" alt="${item.name}">
-          </div>
-
-          <div class="item-info">
-            <div class="item-tag">Producto 0${index + 1}</div>
-            <h3>${item.name}</h3>
-            <p>Producto agregado desde el catálogo principal. Esta tarjeta simula una experiencia real de carrito con miniatura y detalle comercial.</p>
-            <div class="item-meta">
-              <div class="item-unit">Unitario: ${formatPrice(item.price)}</div>
-              <div class="item-price">Cantidad seleccionada: ${item.quantity}</div>
-            </div>
-          </div>
-
-          <div class="item-actions">
-            <div class="qty-control">
-              <button class="qty-btn" data-action="decrease" data-id="${item.id}">−</button>
-              <div class="qty-number">${item.quantity}</div>
-              <button class="qty-btn" data-action="increase" data-id="${item.id}">+</button>
-            </div>
-            <div class="item-total">${formatPrice(totalItem)}</div>
-            <button class="remove-btn" data-action="remove" data-id="${item.id}">Quitar producto</button>
-          </div>
-        `;
-        cartItems.appendChild(row);
+    document.querySelectorAll('.add-cart-btn').forEach(button => {
+      button.addEventListener('click', () => {
+        addToCart({
+          id: button.dataset.id,
+          name: button.dataset.name,
+          price: Number(button.dataset.price),
+          image: button.dataset.image
+        });
       });
-
-      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-      const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
-      const shipping = subtotal > 0 ? 2500 : 0;
-      const discount = subtotal >= 15000 ? 1500 : 0;
-      const total = subtotal + shipping - discount;
-
-      cartCount.textContent = totalItems;
-      subtotalPrice.textContent = formatPrice(subtotal);
-      shippingPrice.textContent = formatPrice(shipping);
-      discountPrice.textContent = `-${formatPrice(discount)}`;
-      totalPrice.textContent = formatPrice(total);
-      mpAmount.textContent = formatPrice(total);
-
-      document.querySelectorAll('[data-action="increase"]').forEach(button => {
-        button.addEventListener('click', () => increaseQty(button.dataset.id));
-      });
-
-      document.querySelectorAll('[data-action="decrease"]').forEach(button => {
-        button.addEventListener('click', () => decreaseQty(button.dataset.id));
-      });
-
-      document.querySelectorAll('[data-action="remove"]').forEach(button => {
-        button.addEventListener('click', () => removeItem(button.dataset.id));
-      });
-    }
-
-    clearCartBtn.addEventListener('click', () => {
-      localStorage.removeItem('novaCleanCart');
-      renderCart();
-      showToast('Carrito vaciado');
     });
 
-    mercadoPagoBtn.addEventListener('click', () => {
-      const cart = getCart();
-      if (!cart.length) {
-        showToast('Agregá productos antes de avanzar al pago');
-        return;
-      }
-
-      showToast('Demo de Mercado Pago activa. Después conectamos el checkout real.');
-    });
-
-    renderCart();
+    updateCartButton();
   </script>
 </body>
 </html>
