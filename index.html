@@ -13,7 +13,6 @@
 body{
 background:#0f172a;
 color:white;
-overflow-x:hidden;
 }
 
 /* NAV */
@@ -21,10 +20,10 @@ overflow-x:hidden;
 position:fixed;
 top:0;
 width:100%;
-background:rgba(15,23,42,0.85);
+background:rgba(15,23,42,0.9);
 backdrop-filter:blur(10px);
-z-index:100;
 border-bottom:1px solid rgba(255,255,255,0.08);
+z-index:100;
 }
 
 .nav{
@@ -41,7 +40,6 @@ color:#cbd5e1;
 text-decoration:none;
 margin:0 15px;
 font-size:14px;
-transition:0.3s;
 }
 
 .nav a.active,
@@ -54,25 +52,22 @@ background:rgba(255,255,255,0.08);
 border:1px solid rgba(255,255,255,0.15);
 color:white;
 text-decoration:none;
-transition:0.3s;
 }
-
-.btn:hover{background:rgba(255,255,255,0.2);}
 
 /* HERO */
 .hero{
 height:100vh;
 display:flex;
 align-items:center;
+background:url('https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1600') center/cover;
 position:relative;
-background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1600') center/cover;
 }
 
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(90deg,#020617 10%,transparent 60%);
+background:linear-gradient(90deg,#020617 20%,transparent 70%);
 }
 
 .hero-content{
@@ -118,7 +113,7 @@ font-weight:600;
 background:rgba(255,255,255,0.08);
 }
 
-/* SECCION PRODUCTOS */
+/* PRODUCTOS */
 .section{
 background:#f1f5f9;
 color:#0f172a;
@@ -128,16 +123,6 @@ padding:80px 20px;
 .container{
 max-width:1200px;
 margin:auto;
-}
-
-.section h2{
-font-size:28px;
-margin-bottom:10px;
-}
-
-.section p{
-color:#64748b;
-margin-bottom:30px;
 }
 
 .grid{
@@ -156,7 +141,6 @@ transition:0.3s;
 
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .card img{
@@ -170,7 +154,6 @@ padding:20px;
 }
 
 .card h3{
-font-size:16px;
 margin-bottom:10px;
 }
 
@@ -183,46 +166,10 @@ border-radius:20px;
 cursor:pointer;
 }
 
-/* CTA */
-.cta{
-background:url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1600') center/cover;
-padding:80px 20px;
-color:white;
-position:relative;
-}
-
-.cta::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(2,6,23,0.7);
-}
-
-.cta-content{
-position:relative;
-max-width:1200px;
-margin:auto;
-}
-
-.cta h2{
-font-size:40px;
-}
-
-.cta button{
-margin-top:20px;
-padding:12px 20px;
-border:none;
-border-radius:25px;
-background:white;
-color:black;
-cursor:pointer;
-}
-
 /* RESPONSIVE */
 @media(max-width:900px){
 .grid{grid-template-columns:1fr;}
 .hero h1{font-size:40px;}
-.hero{height:auto;padding:120px 0;}
 }
 </style>
 </head>
@@ -235,7 +182,6 @@ cursor:pointer;
     <strong>NOVA CLEAN</strong>
 
     <div>
-      <!-- 🔥 LINKS CORRECTOS -->
       <a href="index.html" class="active">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="carrito.html">Carrito</a>
@@ -245,7 +191,7 @@ cursor:pointer;
   </div>
 </div>
 
-<!-- HERO -->
+<!-- HERO CORRECTO (PRODUCTOS) -->
 <section class="hero">
   <div class="hero-content">
     <h1>
@@ -254,7 +200,7 @@ cursor:pointer;
     </h1>
 
     <p>
-      Soluciones para hogar, industria y comercio con calidad garantizada y entrega inmediata.
+      Venta directa de productos para hogar, industria y comercio.
     </p>
 
     <div class="hero-buttons">
@@ -267,8 +213,8 @@ cursor:pointer;
 <!-- PRODUCTOS -->
 <section class="section">
   <div class="container">
+
     <h2>Nuestros productos</h2>
-    <p>Variedad para todas tus necesidades</p>
 
     <div class="grid">
 
@@ -305,15 +251,7 @@ cursor:pointer;
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta">
-  <div class="cta-content">
-    <h2>Ofertas del mes</h2>
-    <p>Hasta 30% de descuento</p>
-    <button onclick="location.href='productos.html'">Ver ofertas</button>
   </div>
 </section>
 
