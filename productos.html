@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova Clean | Productos de Limpieza</title>
+  <title>Nova Clean | Inicio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +13,6 @@
       --bg-dark-2: #0d1b2d;
       --bg-card: rgba(255,255,255,0.08);
       --line: rgba(255,255,255,0.12);
-      --line-soft: rgba(15, 23, 42, 0.10);
       --text: #ffffff;
       --text-soft: #c6d2e2;
       --text-dark: #0f172a;
@@ -25,38 +24,18 @@
       --container: 1280px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 20%, #f4f7fb 20%, #f8fbff 100%);
+      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 30%, #f4f7fb 30%, #f8fbff 100%);
       color: var(--text-dark);
       overflow-x: hidden;
     }
 
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font: inherit; }
 
     .container {
       width: min(var(--container), calc(100% - 40px));
@@ -99,11 +78,7 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
     }
 
-    .brand-mark svg {
-      width: 26px;
-      height: 26px;
-      color: #d8e8f8;
-    }
+    .brand-mark svg { width: 26px; height: 26px; color: #d8e8f8; }
 
     .brand-text strong {
       display: block;
@@ -147,13 +122,11 @@
       transition: width 0.25s ease;
     }
 
-    .nav a:hover {
-      color: var(--white);
-    }
+    .nav a:hover,
+    .nav a.active { color: var(--white); }
 
-    .nav a:hover::after {
-      width: 100%;
-    }
+    .nav a:hover::after,
+    .nav a.active::after { width: 100%; }
 
     .header-actions {
       display: flex;
@@ -182,14 +155,12 @@
       border: 1px solid transparent;
       font-size: 14px;
       font-weight: 700;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+      transition: 0.25s ease;
       cursor: pointer;
       white-space: nowrap;
     }
 
-    .btn:hover {
-      transform: translateY(-2px);
-    }
+    .btn:hover { transform: translateY(-2px); }
 
     .btn-primary {
       background: var(--white);
@@ -211,16 +182,6 @@
     .btn-secondary:hover {
       background: rgba(255,255,255,0.12);
       border-color: rgba(255,255,255,0.24);
-    }
-
-    .btn-dark {
-      background: #0f172a;
-      color: white;
-      box-shadow: var(--shadow-md);
-    }
-
-    .btn-dark:hover {
-      background: #172136;
     }
 
     .hero {
@@ -338,7 +299,7 @@
       border: 1px solid rgba(255,255,255,0.10);
       backdrop-filter: blur(16px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-      transition: transform 0.28s ease, background 0.28s ease, border-color 0.28s ease;
+      transition: 0.28s ease;
     }
 
     .glass-card:hover {
@@ -359,11 +320,7 @@
       border: 1px solid rgba(255,255,255,0.12);
     }
 
-    .glass-icon svg {
-      width: 24px;
-      height: 24px;
-      color: white;
-    }
+    .glass-icon svg { width: 24px; height: 24px; color: white; }
 
     .glass-card h3 {
       font-size: 18px;
@@ -378,9 +335,7 @@
       color: rgba(255,255,255,0.72);
     }
 
-    .hero-visual {
-      position: relative;
-    }
+    .hero-visual { position: relative; }
 
     .visual-glow {
       position: absolute;
@@ -534,351 +489,6 @@
       line-height: 1;
     }
 
-    .section {
-      padding: 72px 0 110px;
-    }
-
-    .section-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 46px;
-    }
-
-    .section-kicker {
-      color: #6f7b89;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.32em;
-      font-weight: 700;
-    }
-
-    .section-head h2 {
-      margin-top: 14px;
-      font-size: clamp(36px, 4vw, 58px);
-      line-height: 1;
-      letter-spacing: -0.04em;
-      color: #0f172a;
-    }
-
-    .section-head p {
-      margin-top: 18px;
-      color: var(--text-gray);
-      font-size: 17px;
-      line-height: 1.9;
-      max-width: 720px;
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-    }
-
-    .product-card {
-      background: white;
-      border: 1px solid rgba(15,23,42,0.08);
-      border-radius: 32px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 30px 80px rgba(15,23,42,0.16);
-    }
-
-    .product-media {
-      position: relative;
-      height: 320px;
-      overflow: hidden;
-    }
-
-    .product-media img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.7s ease;
-    }
-
-    .product-card:hover .product-media img {
-      transform: scale(1.08);
-    }
-
-    .product-media::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(15,23,42,0.00) 15%, rgba(15,23,42,0.66) 100%);
-    }
-
-    .product-badge {
-      position: absolute;
-      top: 18px;
-      left: 18px;
-      z-index: 2;
-      padding: 10px 14px;
-      border-radius: 999px;
-      background: rgba(7,17,31,0.56);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: white;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      backdrop-filter: blur(12px);
-    }
-
-    .product-title {
-      position: absolute;
-      left: 22px;
-      right: 22px;
-      bottom: 20px;
-      z-index: 2;
-      color: white;
-      font-size: 30px;
-      line-height: 1.04;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-    }
-
-    .product-content {
-      padding: 24px 24px 26px;
-    }
-
-    .product-content p {
-      color: var(--text-gray);
-      font-size: 14px;
-      line-height: 1.85;
-      min-height: 104px;
-    }
-
-    .product-bottom {
-      margin-top: 18px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 14px;
-    }
-
-    .product-price {
-      font-size: 26px;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.04em;
-    }
-
-    .add-cart-btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 22px;
-      border-radius: 999px;
-      border: 1px solid rgba(15,23,42,0.12);
-      background: #0f172a;
-      color: white;
-      font-size: 14px;
-      font-weight: 700;
-      cursor: pointer;
-      transition: 0.25s ease;
-    }
-
-    .add-cart-btn:hover {
-      transform: translateY(-2px);
-      background: #162237;
-    }
-
-    .contact-wrap {
-      padding-bottom: 110px;
-    }
-
-    .contact-box {
-      display: grid;
-      grid-template-columns: 0.95fr 1.05fr;
-      overflow: hidden;
-      border-radius: 40px;
-      background: white;
-      border: 1px solid rgba(15,23,42,0.08);
-      box-shadow: var(--shadow-xl);
-    }
-
-    .contact-left {
-      position: relative;
-      background: linear-gradient(180deg, #0f172a 0%, #07111f 100%);
-      color: white;
-      padding: 60px 52px;
-      overflow: hidden;
-    }
-
-    .contact-left::before,
-    .contact-left::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(70px);
-      pointer-events: none;
-      opacity: 0.45;
-    }
-
-    .contact-left::before {
-      width: 220px;
-      height: 220px;
-      background: rgba(255,255,255,0.08);
-      top: -30px;
-      right: -80px;
-    }
-
-    .contact-left::after {
-      width: 180px;
-      height: 180px;
-      background: rgba(173, 197, 224, 0.14);
-      bottom: -30px;
-      left: -40px;
-    }
-
-    .contact-left h2 {
-      margin-top: 16px;
-      font-size: clamp(34px, 4vw, 54px);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-left p {
-      margin-top: 18px;
-      font-size: 16px;
-      line-height: 1.9;
-      color: rgba(255,255,255,0.72);
-      max-width: 500px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-list {
-      margin-top: 34px;
-      display: grid;
-      gap: 18px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-    }
-
-    .contact-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.06);
-      flex-shrink: 0;
-    }
-
-    .contact-item strong {
-      display: block;
-      color: white;
-      font-size: 15px;
-      margin-bottom: 5px;
-    }
-
-    .contact-item span {
-      color: rgba(255,255,255,0.72);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .contact-right {
-      padding: 54px 52px;
-      background: white;
-    }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .field label {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 14px;
-      color: #334155;
-      font-weight: 600;
-    }
-
-    .field input,
-    .field textarea {
-      width: 100%;
-      border: 1px solid rgba(15,23,42,0.10);
-      background: #f7f9fc;
-      border-radius: 20px;
-      padding: 16px 18px;
-      color: #0f172a;
-      outline: none;
-      transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .field textarea {
-      min-height: 170px;
-      resize: vertical;
-      border-radius: 24px;
-    }
-
-    .field input:focus,
-    .field textarea:focus {
-      background: white;
-      border-color: #98a5b6;
-      box-shadow: 0 0 0 4px rgba(15,23,42,0.04);
-    }
-
-    .field.full {
-      grid-column: 1 / -1;
-    }
-
-    .form-bottom {
-      margin-top: 22px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .form-note {
-      max-width: 560px;
-      color: #667085;
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .site-footer {
-      background: white;
-      border-top: 1px solid rgba(15,23,42,0.08);
-    }
-
-    .footer-inner {
-      min-height: 86px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      color: #6b7280;
-      font-size: 14px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 26px;
-      flex-wrap: wrap;
-    }
-
     .toast {
       position: fixed;
       right: 24px;
@@ -903,38 +513,11 @@
       opacity: 1;
     }
 
-    .reveal {
-      opacity: 0;
-      transform: translateY(32px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
     @media (max-width: 1200px) {
-      .hero-grid,
-      .contact-box {
-        grid-template-columns: 1fr;
-      }
-
-      .products-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero-benefits {
-        grid-template-columns: 1fr;
-      }
-
-      .floating-bottom {
-        grid-template-columns: 1fr;
-      }
-
-      .visual-image {
-        min-height: 600px;
-      }
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-benefits { grid-template-columns: 1fr; }
+      .floating-bottom { grid-template-columns: 1fr; }
+      .visual-image { min-height: 600px; }
     }
 
     @media (max-width: 980px) {
@@ -954,66 +537,25 @@
         box-shadow: var(--shadow-xl);
       }
 
-      .nav.open {
-        display: flex;
-      }
-
+      .nav.open { display: flex; }
       .menu-toggle {
         display: inline-flex;
         align-items: center;
         justify-content: center;
       }
-
-      .header-actions .btn-secondary {
-        display: none;
-      }
-
-      .section-head {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .form-grid {
-        grid-template-columns: 1fr;
-      }
     }
 
     @media (max-width: 768px) {
-      .container {
-        width: min(var(--container), calc(100% - 28px));
-      }
-
-      .hero-copy p,
-      .section-head p,
-      .contact-left p {
-        font-size: 15px;
-        line-height: 1.8;
-      }
-
-      .visual-image {
-        min-height: 520px;
-      }
-
+      .container { width: min(var(--container), calc(100% - 28px)); }
+      .header-inner { min-height: 78px; }
+      .brand-text strong { font-size: 16px; }
+      .brand-text span { font-size: 10px; letter-spacing: 0.22em; }
+      .hero { padding-bottom: 60px; }
+      .hero-copy p { font-size: 15px; line-height: 1.8; }
+      .visual-image { min-height: 520px; }
       .floating-top {
         flex-direction: column;
         align-items: flex-start;
-      }
-
-      .products-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .product-media {
-        height: 280px;
-      }
-
-      .contact-left,
-      .contact-right {
-        padding: 34px 24px;
-      }
-
-      .footer-inner {
-        padding: 18px 0;
       }
     }
   </style>
@@ -1021,7 +563,7 @@
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#inicio" class="brand">
+      <a href="index.html" class="brand">
         <div class="brand-mark">
           <svg viewBox="0 0 24 24" fill="none">
             <path d="M12 3c1.8 3.2 6 6.8 6 10.8A6 6 0 1 1 6 13.8C6 9.8 10.2 6.2 12 3Z" stroke="currentColor" stroke-width="1.8"/>
@@ -1035,8 +577,9 @@
       </a>
 
       <nav class="nav" id="mainNav">
-        <a href="#productos">Productos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="index.html" class="active">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="carrito.html" id="headerCartNav">Carrito</a>
       </nav>
 
       <div class="header-actions">
@@ -1051,292 +594,109 @@
   </header>
 
   <main>
-    <section class="section" id="productos">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Portafolio</div>
-            <h2>Nuestras líneas de productos</h2>
-            <p>La estructura visual se mantiene igual, pero ahora la grilla de productos es más amplia, uniforme y ordenada, con tarjetas cuadradas del mismo tamaño para dar una sensación más profesional y prolija.</p>
-          </div>
-          <a href="carrito.html" class="btn btn-dark">Ver carrito</a>
-        </div>
-
-        <div class="products-grid">
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=1200&q=80" alt="Lavandina Premium" />
-              <div class="product-badge">01</div>
-              <h3 class="product-title">Lavandina Premium</h3>
-            </div>
-            <div class="product-content">
-              <p>Desinfección profunda para hogar, oficinas y superficies de alto tránsito con presentación comercial profesional.</p>
-              <div class="product-bottom">
-                <div class="product-price">$4.500</div>
-                <button class="add-cart-btn" data-id="1" data-name="Lavandina Premium" data-price="4500" data-image="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=1200&q=80" alt="Detergente Industrial" />
-              <div class="product-badge">02</div>
-              <h3 class="product-title">Detergente Industrial</h3>
-            </div>
-            <div class="product-content">
-              <p>Alta concentración para limpieza intensiva en comercios, gastronomía, depósitos y operaciones de uso continuo.</p>
-              <div class="product-bottom">
-                <div class="product-price">$6.200</div>
-                <button class="add-cart-btn" data-id="2" data-name="Detergente Industrial" data-price="6200" data-image="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=1200&q=80" alt="Jabón Líquido Antibacterial" />
-              <div class="product-badge">03</div>
-              <h3 class="product-title">Jabón Líquido Antibacterial</h3>
-            </div>
-            <div class="product-content">
-              <p>Ideal para baños, oficinas y espacios corporativos donde la higiene y la presentación son una prioridad.</p>
-              <div class="product-bottom">
-                <div class="product-price">$3.900</div>
-                <button class="add-cart-btn" data-id="3" data-name="Jabón Líquido Antibacterial" data-price="3900" data-image="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=1200&q=80" alt="Pack Descartables Pro" />
-              <div class="product-badge">04</div>
-              <h3 class="product-title">Pack Descartables Pro</h3>
-            </div>
-            <div class="product-content">
-              <p>Guantes, servilletas y descartables para reposición rápida con una presentación visual limpia y ordenada.</p>
-              <div class="product-bottom">
-                <div class="product-price">$5.700</div>
-                <button class="add-cart-btn" data-id="4" data-name="Pack Descartables Pro" data-price="5700" data-image="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=1200&q=80" alt="Desengrasante Pro" />
-              <div class="product-badge">05</div>
-              <h3 class="product-title">Desengrasante Pro</h3>
-            </div>
-            <div class="product-content">
-              <p>Fórmula intensiva para cocinas, superficies de trabajo y áreas con suciedad pesada o grasa acumulada.</p>
-              <div class="product-bottom">
-                <div class="product-price">$4.900</div>
-                <button class="add-cart-btn" data-id="5" data-name="Desengrasante Pro" data-price="4900" data-image="https://images.unsplash.com/photo-1556228578-8c89e6adf883?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=1200&q=80" alt="Limpiavidrios Ultra" />
-              <div class="product-badge">06</div>
-              <h3 class="product-title">Limpiavidrios Ultra</h3>
-            </div>
-            <div class="product-content">
-              <p>Brillo parejo y secado rápido para vidrios, espejos, mostradores y superficies transparentes de alto uso.</p>
-              <div class="product-bottom">
-                <div class="product-price">$3.400</div>
-                <button class="add-cart-btn" data-id="6" data-name="Limpiavidrios Ultra" data-price="3400" data-image="https://images.unsplash.com/photo-1610557892470-55d9e80c0bce?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=1200&q=80" alt="Alcohol Sanitizante" />
-              <div class="product-badge">07</div>
-              <h3 class="product-title">Alcohol Sanitizante</h3>
-            </div>
-            <div class="product-content">
-              <p>Ideal para espacios compartidos, mostradores, oficinas y puntos de atención con foco en higiene constante.</p>
-              <div class="product-bottom">
-                <div class="product-price">$2.800</div>
-                <button class="add-cart-btn" data-id="7" data-name="Alcohol Sanitizante" data-price="2800" data-image="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=1200&q=80" alt="Suavizante Textil" />
-              <div class="product-badge">08</div>
-              <h3 class="product-title">Suavizante Textil</h3>
-            </div>
-            <div class="product-content">
-              <p>Fragancia duradera y cuidado textil para ropa de trabajo, blancos, lavanderías y uso comercial continuo.</p>
-              <div class="product-bottom">
-                <div class="product-price">$5.300</div>
-                <button class="add-cart-btn" data-id="8" data-name="Suavizante Textil" data-price="5300" data-image="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=1200&q=80" alt="Limpiador Multiuso" />
-              <div class="product-badge">09</div>
-              <h3 class="product-title">Limpiador Multiuso</h3>
-            </div>
-            <div class="product-content">
-              <p>Solución versátil para escritorios, muebles, barras, superficies plásticas y limpieza diaria general.</p>
-              <div class="product-bottom">
-                <div class="product-price">$3.600</div>
-                <button class="add-cart-btn" data-id="9" data-name="Limpiador Multiuso" data-price="3600" data-image="https://images.unsplash.com/photo-1563453392212-326f5e854473?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=1200&q=80" alt="Guantes de Nitrilo" />
-              <div class="product-badge">10</div>
-              <h3 class="product-title">Guantes de Nitrilo</h3>
-            </div>
-            <div class="product-content">
-              <p>Protección cómoda y resistente para limpieza, manipulación de productos y tareas de uso prolongado.</p>
-              <div class="product-bottom">
-                <div class="product-price">$7.100</div>
-                <button class="add-cart-btn" data-id="10" data-name="Guantes de Nitrilo" data-price="7100" data-image="https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1632818924360-68d4994cfdb2?auto=format&fit=crop&w=1200&q=80" alt="Papel Higiénico Institucional" />
-              <div class="product-badge">11</div>
-              <h3 class="product-title">Papel Institucional</h3>
-            </div>
-            <div class="product-content">
-              <p>Rendimiento alto para baños de oficinas, locales, centros de atención y espacios con gran circulación.</p>
-              <div class="product-bottom">
-                <div class="product-price">$8.400</div>
-                <button class="add-cart-btn" data-id="11" data-name="Papel Institucional" data-price="8400" data-image="https://images.unsplash.com/photo-1632818924360-68d4994cfdb2?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-
-          <article class="product-card reveal">
-            <div class="product-media">
-              <img src="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=1200&q=80" alt="Bolsa Residuos Reforzada" />
-              <div class="product-badge">12</div>
-              <h3 class="product-title">Bolsas Reforzadas</h3>
-            </div>
-            <div class="product-content">
-              <p>Mayor resistencia para residuos pesados en locales, industrias, consorcios y servicios de limpieza profesional.</p>
-              <div class="product-bottom">
-                <div class="product-price">$6.800</div>
-                <button class="add-cart-btn" data-id="12" data-name="Bolsas Reforzadas" data-price="6800" data-image="https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=600&q=80">Agregar al carrito</button>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact-wrap" id="contacto">
-      <div class="container">
-        <div class="contact-box reveal">
-          <div class="contact-left">
-            <div class="section-kicker" style="color: rgba(255,255,255,0.50); position: relative; z-index: 2;">Contacto comercial</div>
-            <h2>Solicitá una cotización</h2>
-            <p>Se conserva la misma línea visual premium para cerrar consultas, pedidos por volumen o futuros pedidos online desde el mismo sitio.</p>
-
-            <div class="contact-list">
-              <div class="contact-item">
-                <div class="contact-icon"></div>
-                <div>
-                  <strong>Teléfono</strong>
-                  <span>+54 11 6693 4099</span>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"></div>
-                <div>
-                  <strong>Email</strong>
-                  <span>ventas@novaclean.com</span>
-                </div>
-              </div>
-
-              <div class="contact-item">
-                <div class="contact-icon"></div>
-                <div>
-                  <strong>Ubicación</strong>
-                  <span>Parque Industrial · Buenos Aires · Argentina</span>
-                </div>
-              </div>
-            </div>
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <i></i>
+            Soluciones de limpieza profesional
           </div>
 
-          <div class="contact-right">
-            <form id="contactForm">
-              <div class="form-grid">
-                <div class="field">
-                  <label for="nombre">Nombre</label>
-                  <input id="nombre" type="text" placeholder="Tu nombre" required>
-                </div>
+          <h1>
+            Productos de limpieza con imagen
+            <span class="text-gradient">corporativa y nivel premium</span>
+          </h1>
 
-                <div class="field">
-                  <label for="empresaInput">Empresa</label>
-                  <input id="empresaInput" type="text" placeholder="Nombre de empresa" required>
-                </div>
+          <p>
+            Una página moderna, sobria y profesional para transmitir respaldo, orden y escala comercial. Ideal para presentar el negocio, llevar clientes al catálogo y permitir una experiencia de compra clara y visual.
+          </p>
 
-                <div class="field">
-                  <label for="email">Email</label>
-                  <input id="email" type="email" placeholder="nombre@empresa.com" required>
-                </div>
+          <div class="hero-actions">
+            <a href="productos.html" class="btn btn-primary">Ver productos</a>
+            <a href="carrito.html" class="btn btn-secondary">Ver carrito</a>
+          </div>
 
-                <div class="field">
-                  <label for="telefono">Teléfono</label>
-                  <input id="telefono" type="text" placeholder="Tu teléfono" required>
-                </div>
+          <div class="hero-benefits">
+            <article class="glass-card">
+              <div class="glass-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M3 7h11v8H3V7Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="M14 10h3l3 3v2h-6v-5Z" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="7.5" cy="17.5" r="1.7" stroke="currentColor" stroke-width="1.8"/>
+                  <circle cx="17.5" cy="17.5" r="1.7" stroke="currentColor" stroke-width="1.8"/>
+                </svg>
+              </div>
+              <h3>Cobertura nacional</h3>
+              <p>Abastecimiento confiable para negocios, distribuidores y clientes corporativos en todo el país.</p>
+            </article>
 
-                <div class="field full">
-                  <label for="mensaje">Mensaje</label>
-                  <textarea id="mensaje" placeholder="Contanos qué productos o volúmenes necesitás..." required></textarea>
+            <article class="glass-card">
+              <div class="glass-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 3l7 3v5c0 4.5-3 7.8-7 10-4-2.2-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8"/>
+                  <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <h3>Calidad certificada</h3>
+              <p>Productos seleccionados con estándares profesionales para generar resultados consistentes.</p>
+            </article>
+
+            <article class="glass-card">
+              <div class="glass-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2v20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                  <path d="M16.5 6.5c0-1.7-1.8-3-4.5-3S7.5 4.8 7.5 6.5 9.3 9 12 9s4.5 1.3 4.5 3-1.8 3-4.5 3-4.5-1.3-4.5-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <h3>Precios competitivos</h3>
+              <p>Escalas mayoristas, promociones por volumen y atención comercial personalizada.</p>
+            </article>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="visual-glow one"></div>
+          <div class="visual-glow two"></div>
+
+          <div class="visual-frame">
+            <div class="visual-image">
+              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80" alt="Productos de limpieza premium" />
+              <div class="visual-overlay"></div>
+
+              <div class="floating-top">
+                <div>
+                  <div class="mini-label">Corporate Supply</div>
+                  <div class="mini-title">Distribución profesional para hogar, comercio e industria</div>
                 </div>
+                <div class="top-pill">B2B / B2C</div>
               </div>
 
-              <div class="form-bottom">
-                <div class="form-note">Después se puede conectar este formulario a WhatsApp, email, base de datos o un panel administrativo sin tocar el diseño actual.</div>
-                <button type="submit" class="btn btn-dark">Enviar consulta</button>
+              <div class="floating-bottom">
+                <div class="floating-card">
+                  <div class="mini-label">Línea destacada</div>
+                  <h3>Soluciones institucionales</h3>
+                  <p>Presentación sobria, ideal para ventas mayoristas, distribuidores y clientes corporativos.</p>
+                </div>
+                <div class="floating-offer">
+                  <div class="mini-label">Oferta corporativa</div>
+                  <div class="offer-number">30%</div>
+                  <p>En compras por volumen para cuentas mayoristas y clientes recurrentes.</p>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>© 2026 NOVA CLEAN · Sitio corporativo de productos de limpieza.</div>
-      <div class="footer-links">
-        <a href="#">Política de privacidad</a>
-        <a href="#">Términos y condiciones</a>
-      </div>
-    </div>
-  </footer>
-
-  <div class="toast" id="cartToast">Producto agregado al carrito</div>
+  <div class="toast" id="cartToast"></div>
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
     const mainNav = document.getElementById('mainNav');
     const headerCartButton = document.getElementById('headerCartButton');
+    const headerCartNav = document.getElementById('headerCartNav');
     const cartToast = document.getElementById('cartToast');
 
     if (menuToggle && mainNav) {
@@ -1351,73 +711,17 @@
       });
     }
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.12 });
-
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
     function getCart() {
       const savedCart = localStorage.getItem('novaCleanCart');
       return savedCart ? JSON.parse(savedCart) : [];
     }
 
-    function saveCart(cart) {
-      localStorage.setItem('novaCleanCart', JSON.stringify(cart));
-    }
-
     function updateCartButton() {
       const cart = getCart();
       const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-      headerCartButton.textContent = totalItems > 0 ? `Ver Carrito (${totalItems})` : 'Ver Carrito';
-    }
-
-    function showToast(message) {
-      cartToast.textContent = message;
-      cartToast.classList.add('show');
-      clearTimeout(window.toastTimer);
-      window.toastTimer = setTimeout(() => {
-        cartToast.classList.remove('show');
-      }, 1800);
-    }
-
-    function addToCart(product) {
-      const cart = getCart();
-      const existing = cart.find(item => item.id === product.id);
-
-      if (existing) {
-        existing.quantity += 1;
-      } else {
-        cart.push({ ...product, quantity: 1 });
-      }
-
-      saveCart(cart);
-      updateCartButton();
-      showToast(`${product.name} agregado al carrito`);
-    }
-
-    document.querySelectorAll('.add-cart-btn').forEach(button => {
-      button.addEventListener('click', () => {
-        addToCart({
-          id: button.dataset.id,
-          name: button.dataset.name,
-          price: Number(button.dataset.price),
-          image: button.dataset.image
-        });
-      });
-    });
-
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-      contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        alert('Formulario de ejemplo. Después lo conectamos a WhatsApp, email o base de datos.');
-      });
+      const text = totalItems > 0 ? `Ver Carrito (${totalItems})` : 'Ver Carrito';
+      if (headerCartButton) headerCartButton.textContent = text;
+      if (headerCartNav) headerCartNav.textContent = totalItems > 0 ? `Carrito (${totalItems})` : 'Carrito';
     }
 
     updateCartButton();
