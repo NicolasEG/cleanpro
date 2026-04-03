@@ -11,8 +11,9 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
 body{
-background:#eef2f6;
-color:#1e293b;
+background:#0f172a;
+color:white;
+overflow-x:hidden;
 }
 
 /* NAV */
@@ -20,8 +21,10 @@ color:#1e293b;
 position:fixed;
 top:0;
 width:100%;
-background:#3a4656;
+background:rgba(15,23,42,0.85);
+backdrop-filter:blur(10px);
 z-index:100;
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .nav{
@@ -36,101 +39,105 @@ padding:18px;
 .nav a{
 color:#cbd5e1;
 text-decoration:none;
-margin:0 12px;
+margin:0 15px;
 font-size:14px;
+transition:0.3s;
 }
 
 .nav a.active,
 .nav a:hover{color:white;}
 
 .btn{
-background:#4b5a6d;
 padding:10px 18px;
-border-radius:20px;
+border-radius:25px;
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.15);
 color:white;
 text-decoration:none;
+transition:0.3s;
 }
+
+.btn:hover{background:rgba(255,255,255,0.2);}
 
 /* HERO */
 .hero{
-margin-top:70px;
-height:520px;
-background:url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1600') center/cover;
+height:100vh;
 display:flex;
 align-items:center;
 position:relative;
+background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1600') center/cover;
 }
 
 .hero::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(90deg,#3a4656cc,transparent);
+background:linear-gradient(90deg,#020617 10%,transparent 60%);
 }
 
 .hero-content{
 position:relative;
 max-width:1200px;
 margin:auto;
-color:white;
+padding:20px;
 }
 
 .hero h1{
-font-size:50px;
+font-size:64px;
 font-weight:800;
+line-height:1;
+}
+
+.hero span{
+display:block;
+background:linear-gradient(90deg,#cbd5e1,#ffffff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .hero p{
-margin-top:10px;
-letter-spacing:1px;
-color:#dbe2ea;
-}
-
-.hero button{
 margin-top:20px;
-padding:14px 25px;
-border:none;
-border-radius:25px;
-background:#4b5a6d;
-color:white;
-cursor:pointer;
+color:#94a3b8;
+font-size:18px;
+max-width:600px;
 }
 
-/* BENEFICIOS */
-.benefits{
-max-width:1200px;
-margin:auto;
-margin-top:-40px;
+.hero-buttons{
+margin-top:30px;
 display:flex;
-gap:20px;
+gap:15px;
 }
 
-.benefit{
-flex:1;
+.btn-primary{
 background:white;
-padding:20px;
-border-radius:10px;
-display:flex;
-align-items:center;
-gap:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
+color:#0f172a;
+font-weight:600;
 }
 
-/* PRODUCTOS */
+.btn-secondary{
+background:rgba(255,255,255,0.08);
+}
+
+/* SECCION PRODUCTOS */
 .section{
+background:#f1f5f9;
+color:#0f172a;
+padding:80px 20px;
+}
+
+.container{
 max-width:1200px;
 margin:auto;
-padding:60px 20px;
 }
 
 .section h2{
-font-size:22px;
+font-size:28px;
 margin-bottom:10px;
 }
 
 .section p{
 color:#64748b;
-margin-bottom:20px;
+margin-bottom:30px;
 }
 
 .grid{
@@ -141,101 +148,81 @@ gap:20px;
 
 .card{
 background:white;
-border-radius:12px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
 }
 
 .card img{
 width:100%;
-height:170px;
+height:200px;
 object-fit:cover;
 }
 
 .card-content{
-padding:15px;
+padding:20px;
 }
 
 .card h3{
-font-size:15px;
-margin-bottom:8px;
+font-size:16px;
+margin-bottom:10px;
 }
 
 .card button{
-padding:8px 14px;
+padding:10px 15px;
 border:none;
-background:#4b5a6d;
+background:#0f172a;
 color:white;
 border-radius:20px;
 cursor:pointer;
 }
 
-/* OFERTA */
-.offer{
-background:url('https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1600') center/cover;
-padding:60px 20px;
+/* CTA */
+.cta{
+background:url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1600') center/cover;
+padding:80px 20px;
 color:white;
+position:relative;
 }
 
-.offer h2{font-size:30px;}
-.offer p{margin-top:10px;}
+.cta::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(2,6,23,0.7);
+}
 
-.offer button{
+.cta-content{
+position:relative;
+max-width:1200px;
+margin:auto;
+}
+
+.cta h2{
+font-size:40px;
+}
+
+.cta button{
 margin-top:20px;
 padding:12px 20px;
 border:none;
 border-radius:25px;
-background:#4b5a6d;
-color:white;
-}
-
-/* CONTACTO */
-.contact{
-display:flex;
-gap:40px;
-}
-
-.form{
-flex:1;
 background:white;
-padding:20px;
-border-radius:10px;
-box-shadow:0 10px 20px rgba(0,0,0,0.08);
-}
-
-.form input,
-.form textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
-border-radius:8px;
-border:1px solid #ddd;
-}
-
-.form button{
-background:#22c55e;
-color:white;
-padding:12px;
-border:none;
-border-radius:8px;
+color:black;
 cursor:pointer;
-}
-
-/* FOOTER */
-.footer{
-background:#3a4656;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:40px;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
 .grid{grid-template-columns:1fr;}
-.benefits{flex-direction:column;}
-.contact{flex-direction:column;}
-.hero h1{font-size:30px;}
+.hero h1{font-size:40px;}
+.hero{height:auto;padding:120px 0;}
 }
 </style>
 </head>
@@ -245,9 +232,10 @@ margin-top:40px;
 <!-- NAV -->
 <div class="header">
   <div class="nav">
-    <strong style="color:white;">NOVA CLEAN</strong>
+    <strong>NOVA CLEAN</strong>
 
     <div>
+      <!-- 🔥 LINKS CORRECTOS -->
       <a href="index.html" class="active">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="carrito.html">Carrito</a>
@@ -260,87 +248,74 @@ margin-top:40px;
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>PRODUCTOS DE LIMPIEZA</h1>
-    <p>PARA HOGAR, INDUSTRIA Y COMERCIO</p>
-    <button onclick="location.href='productos.html'">Ver Productos</button>
+    <h1>
+      Productos de limpieza
+      <span>profesionales</span>
+    </h1>
+
+    <p>
+      Soluciones para hogar, industria y comercio con calidad garantizada y entrega inmediata.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="productos.html" class="btn btn-primary">Ver productos</a>
+      <a href="carrito.html" class="btn btn-secondary">Ver carrito</a>
+    </div>
   </div>
 </section>
-
-<!-- BENEFICIOS -->
-<div class="benefits">
-  <div class="benefit">🚚 Envíos rápidos</div>
-  <div class="benefit">🛡 Máxima calidad</div>
-  <div class="benefit">💲 Precios competitivos</div>
-</div>
 
 <!-- PRODUCTOS -->
 <section class="section">
-  <h2>NUESTROS PRODUCTOS</h2>
-  <p>Variedad para todas tus necesidades</p>
+  <div class="container">
+    <h2>Nuestros productos</h2>
+    <p>Variedad para todas tus necesidades</p>
 
-  <div class="grid">
+    <div class="grid">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
-      <div class="card-content">
-        <h3>Limpieza Hogar</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
+        <div class="card-content">
+          <h3>Limpieza Hogar</h3>
+          <button onclick="location.href='productos.html'">Ver más</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f">
-      <div class="card-content">
-        <h3>Limpieza Industrial</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f">
+        <div class="card-content">
+          <h3>Limpieza Industrial</h3>
+          <button onclick="location.href='productos.html'">Ver más</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
-      <div class="card-content">
-        <h3>Higiene Personal</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
+        <div class="card-content">
+          <h3>Higiene Personal</h3>
+          <button onclick="location.href='productos.html'">Ver más</button>
+        </div>
       </div>
-    </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-      <div class="card-content">
-        <h3>Desechables</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+        <div class="card-content">
+          <h3>Desechables</h3>
+          <button onclick="location.href='productos.html'">Ver más</button>
+        </div>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
-<!-- OFERTA -->
-<section class="offer">
-  <h2>OFERTAS DEL MES</h2>
-  <p>Hasta 30% de descuento</p>
-  <button onclick="location.href='productos.html'">Ver ofertas</button>
-</section>
-
-<!-- CONTACTO -->
-<section class="section contact">
-  <div>
-    <h2>¿POR QUÉ ELEGIRNOS?</h2>
-    <p>Atención personalizada, stock permanente y entregas rápidas.</p>
-  </div>
-
-  <div class="form">
-    <input placeholder="Nombre">
-    <input placeholder="Email">
-    <input placeholder="Teléfono">
-    <textarea placeholder="Mensaje"></textarea>
-    <button>Enviar</button>
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-content">
+    <h2>Ofertas del mes</h2>
+    <p>Hasta 30% de descuento</p>
+    <button onclick="location.href='productos.html'">Ver ofertas</button>
   </div>
 </section>
-
-<div class="footer">
-  CONTACTANOS - Nova Clean
-</div>
 
 </body>
 </html>
