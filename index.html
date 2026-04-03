@@ -3,17 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nova Clean | Productos de limpieza</title>
+<title>Nova Clean</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
 
-body{
-background:#f4f7fb;
-color:#0f172a;
-}
+body{background:#f3f6fb;color:#0f172a;}
 
 /* NAV */
 .header{
@@ -29,86 +26,54 @@ max-width:1200px;
 margin:auto;
 display:flex;
 justify-content:space-between;
-align-items:center;
 padding:18px;
 }
 
 .nav a{
 color:#cbd5e1;
 text-decoration:none;
-margin:0 15px;
+margin:0 10px;
 }
 
-.nav a.active,
 .nav a:hover{color:white;}
 
 .btn{
 background:#1e293b;
-padding:10px 18px;
+padding:8px 15px;
 border-radius:20px;
 color:white;
-text-decoration:none;
 }
 
 /* HERO */
 .hero{
 margin-top:70px;
-height:520px;
-background:#e2e8f0;
-display:flex;
-align-items:center;
+background:linear-gradient(90deg,#0f172a,#1e293b);
+color:white;
+padding:80px 20px;
 }
 
-.hero-content{
+.hero-container{
 max-width:1200px;
 margin:auto;
 display:flex;
-align-items:center;
 justify-content:space-between;
-gap:40px;
-padding:20px;
+align-items:center;
 }
 
-.hero-text h1{
-font-size:48px;
-font-weight:800;
-}
+.hero h1{font-size:48px;}
+.hero p{margin-top:10px;color:#94a3b8;}
 
-.hero-text p{
-margin-top:15px;
-color:#64748b;
-}
-
-.hero-text button{
+.hero button{
 margin-top:20px;
 padding:12px 25px;
 border:none;
 border-radius:25px;
-background:#0f172a;
-color:white;
+background:white;
+color:black;
 cursor:pointer;
 }
 
-.hero img{
-width:450px;
-}
-
-/* BENEFICIOS */
-.benefits{
-display:flex;
-justify-content:center;
-gap:40px;
-padding:30px;
-background:white;
-border-radius:15px;
-max-width:1000px;
-margin:-40px auto 40px auto;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.benefit{text-align:center;}
-
-/* PRODUCTOS */
+/* CATEGORIAS */
 .section{
 max-width:1200px;
 margin:auto;
@@ -124,49 +89,57 @@ gap:20px;
 .card{
 background:white;
 border-radius:15px;
-overflow:hidden;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
-transition:0.3s;
+overflow:hidden;
 }
 
-.card:hover{transform:translateY(-5px);}
+.card img{width:100%;height:180px;object-fit:cover;}
+.card-content{padding:15px;}
 
-.card img{
+/* DESTACADOS */
+.products{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+}
+
+.product{
+background:white;
+border-radius:15px;
+padding:15px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.product img{
 width:100%;
-height:180px;
+height:160px;
 object-fit:cover;
 }
 
-.card-content{
-padding:15px;
-}
-
-.card button{
+.product button{
 margin-top:10px;
-padding:8px 15px;
-border:none;
+padding:8px;
 background:#0f172a;
 color:white;
+border:none;
 border-radius:20px;
-cursor:pointer;
 }
 
 /* CTA */
 .cta{
 background:#0f172a;
 color:white;
-padding:60px;
 text-align:center;
+padding:60px;
 }
 
 .cta button{
 margin-top:20px;
 padding:12px 25px;
 border:none;
-border-radius:25px;
 background:white;
-color:black;
-cursor:pointer;
+border-radius:25px;
 }
 
 /* FOOTER */
@@ -177,11 +150,9 @@ text-align:center;
 padding:30px;
 }
 
-/* RESPONSIVE */
 @media(max-width:900px){
-.grid{grid-template-columns:1fr;}
-.hero-content{flex-direction:column;}
-.hero img{width:100%;}
+.grid,.products{grid-template-columns:1fr;}
+.hero-container{flex-direction:column;}
 }
 </style>
 </head>
@@ -190,96 +161,112 @@ padding:30px;
 
 <!-- NAV -->
 <div class="header">
-  <div class="nav">
-    <strong style="color:white;">NOVA CLEAN</strong>
+<div class="nav">
+<strong style="color:white;">NOVA CLEAN</strong>
 
-    <div>
-      <a href="index.html" class="active">Inicio</a>
-      <a href="productos.html">Productos</a>
-      <a href="carrito.html">Carrito</a>
-    </div>
+<div>
+<a href="index.html">Inicio</a>
+<a href="productos.html">Productos</a>
+<a href="carrito.html">Carrito</a>
+</div>
 
-    <a href="carrito.html" class="btn">Ver carrito</a>
-  </div>
+<a href="carrito.html" class="btn">Ver carrito</a>
+</div>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
+<div class="hero-container">
 
-    <div class="hero-text">
-      <h1>Productos de limpieza profesionales</h1>
-      <p>Venta directa para hogar, comercio e industria</p>
+<div>
+<h1>Productos de limpieza profesionales</h1>
+<p>Venta mayorista y minorista para hogar, comercio e industria</p>
 
-      <button onclick="location.href='productos.html'">
-        Ver productos
-      </button>
-    </div>
-
-    <img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=800">
-
-  </div>
-</section>
-
-<!-- BENEFICIOS -->
-<div class="benefits">
-  <div class="benefit">🚚 Envíos rápidos</div>
-  <div class="benefit">⭐ Calidad garantizada</div>
-  <div class="benefit">💲 Precios mayoristas</div>
+<button onclick="location.href='productos.html'">
+Ver productos
+</button>
 </div>
 
-<!-- PRODUCTOS -->
+<img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=500">
+
+</div>
+</section>
+
+<!-- CATEGORIAS -->
 <section class="section">
+<h2>Categorías</h2>
 
-  <h2>Nuestros productos</h2>
+<div class="grid">
 
-  <div class="grid">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
+<div class="card-content">Limpieza hogar</div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
-      <div class="card-content">
-        <h3>Limpieza hogar</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
-      </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f">
+<div class="card-content">Limpieza industrial</div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f">
-      <div class="card-content">
-        <h3>Limpieza industrial</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
-      </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
+<div class="card-content">Higiene personal</div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
-      <div class="card-content">
-        <h3>Higiene personal</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
-      </div>
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<div class="card-content">Desechables</div>
+</div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-      <div class="card-content">
-        <h3>Desechables</h3>
-        <button onclick="location.href='productos.html'">Ver más</button>
-      </div>
-    </div>
+</div>
+</section>
 
-  </div>
+<!-- PRODUCTOS DESTACADOS -->
+<section class="section">
+<h2>Productos destacados</h2>
 
+<div class="products">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f">
+<h4>Detergente industrial</h4>
+<p>$6.200</p>
+<button>Agregar</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
+<h4>Jabón líquido</h4>
+<p>$3.900</p>
+<button>Agregar</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
+<h4>Lavandina</h4>
+<p>$4.500</p>
+<button>Agregar</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
+<h4>Pack descartables</h4>
+<p>$5.700</p>
+<button>Agregar</button>
+</div>
+
+</div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Comprá online ahora</h2>
-  <button onclick="location.href='productos.html'">Ir a productos</button>
+<h2>Comprá online fácil y rápido</h2>
+<button onclick="location.href='productos.html'">Ir a tienda</button>
 </section>
 
 <!-- FOOTER -->
 <div class="footer">
-  © Nova Clean - Venta de productos de limpieza
+© Nova Clean - Venta de productos de limpieza
 </div>
 
 </body>
