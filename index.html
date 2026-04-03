@@ -20,8 +20,7 @@ color:#1e293b;
 position:fixed;
 top:0;
 width:100%;
-background:rgba(15,23,42,0.85);
-backdrop-filter:blur(10px);
+background:#2f3b4c;
 z-index:100;
 }
 
@@ -38,6 +37,7 @@ padding:20px;
 color:#cbd5e1;
 text-decoration:none;
 margin:0 15px;
+font-size:14px;
 }
 
 .nav a.active,
@@ -46,7 +46,7 @@ margin:0 15px;
 .btn{
 padding:10px 18px;
 border-radius:25px;
-background:rgba(255,255,255,0.1);
+background:#3f4c5e;
 color:white;
 text-decoration:none;
 }
@@ -57,7 +57,7 @@ margin-top:80px;
 height:520px;
 display:flex;
 align-items:center;
-background:url('https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=1600') center/cover;
+background:url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1600') center/cover;
 position:relative;
 }
 
@@ -65,7 +65,7 @@ position:relative;
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(90deg,rgba(0,0,0,0.7),transparent);
+background:linear-gradient(90deg,rgba(40,50,65,0.85),transparent);
 }
 
 .hero-content{
@@ -76,26 +76,29 @@ color:white;
 }
 
 .hero h1{
-font-size:50px;
+font-size:52px;
 line-height:1.1;
+font-weight:800;
 }
 
 .hero p{
-margin-top:15px;
-color:#cbd5e1;
+margin-top:10px;
+color:#dbe2ea;
+letter-spacing:1px;
 }
 
 .hero button{
 margin-top:20px;
-padding:14px 24px;
+padding:14px 28px;
 border:none;
 border-radius:30px;
-background:#334155;
+background:#556477;
 color:white;
+font-weight:600;
 cursor:pointer;
 }
 
-/* BENEFITS */
+/* BENEFICIOS */
 .benefits{
 max-width:1200px;
 margin:auto;
@@ -108,15 +111,28 @@ margin-top:-50px;
 flex:1;
 background:white;
 padding:20px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+display:flex;
+align-items:center;
+gap:10px;
 }
 
-/* PRODUCTS */
+/* PRODUCTOS */
 .section{
 max-width:1200px;
 margin:auto;
 padding:60px 20px;
+}
+
+.section h2{
+font-size:22px;
+margin-bottom:10px;
+}
+
+.section p{
+color:#64748b;
+margin-bottom:20px;
 }
 
 .grid{
@@ -127,48 +143,59 @@ gap:20px;
 
 .card{
 background:white;
-border-radius:15px;
+border-radius:12px;
 overflow:hidden;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
 .card:hover{transform:translateY(-5px);}
 
-.card img{width:100%;height:180px;object-fit:cover;}
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
 
-.card-content{padding:15px;}
+.card-content{
+padding:15px;
+}
+
+.card h3{
+font-size:16px;
+margin-bottom:5px;
+}
 
 .card button{
-margin-top:10px;
-padding:10px;
+padding:8px 14px;
 border:none;
-background:#334155;
+background:#3f4c5e;
 color:white;
 border-radius:20px;
 cursor:pointer;
+font-size:13px;
 }
 
-/* OFFER */
+/* OFERTA */
 .offer{
-background:url('https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?q=80&w=1600') center/cover;
-color:white;
+background:url('https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=1600') center/cover;
 padding:60px 20px;
-text-align:left;
+color:white;
 }
 
-.offer h2{font-size:40px;}
+.offer h2{font-size:32px;}
+.offer p{margin-top:10px;}
 
 .offer button{
 margin-top:20px;
 padding:12px 20px;
 border:none;
 border-radius:25px;
-background:#334155;
+background:#3f4c5e;
 color:white;
 }
 
-/* CONTACT */
+/* CONTACTO */
 .contact{
 display:flex;
 gap:40px;
@@ -178,8 +205,8 @@ gap:40px;
 flex:1;
 background:white;
 padding:20px;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
 .form input,
@@ -192,12 +219,21 @@ border:1px solid #ddd;
 }
 
 .form button{
-background:#16a34a;
+background:#22c55e;
 color:white;
 padding:12px;
 border:none;
 border-radius:10px;
 cursor:pointer;
+}
+
+/* FOOTER */
+.footer{
+background:#2f3b4c;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
 }
 
 /* RESPONSIVE */
@@ -207,7 +243,6 @@ cursor:pointer;
 .contact{flex-direction:column;}
 .hero h1{font-size:30px;}
 }
-
 </style>
 </head>
 
@@ -219,7 +254,6 @@ cursor:pointer;
     <strong style="color:white;">NOVA CLEAN</strong>
 
     <div>
-      <!-- 🔥 LINKS CORRECTOS -->
       <a href="index.html" class="active">Inicio</a>
       <a href="productos.html">Productos</a>
       <a href="carrito.html">Carrito</a>
@@ -233,28 +267,29 @@ cursor:pointer;
 <section class="hero">
   <div class="hero-content">
     <h1>PRODUCTOS DE LIMPIEZA</h1>
-    <p>Para hogar, industria y comercio</p>
-    <button onclick="location.href='productos.html'">Ver productos</button>
+    <p>PARA HOGAR, INDUSTRIA Y COMERCIO</p>
+    <button onclick="location.href='productos.html'">Ver Productos</button>
   </div>
 </section>
 
 <!-- BENEFICIOS -->
 <div class="benefits">
   <div class="benefit">🚚 Envíos rápidos</div>
-  <div class="benefit">⭐ Máxima calidad</div>
-  <div class="benefit">💲 Mejores precios</div>
+  <div class="benefit">🛡 Máxima calidad</div>
+  <div class="benefit">💲 Precios competitivos</div>
 </div>
 
 <!-- PRODUCTOS -->
 <section class="section">
   <h2>NUESTROS PRODUCTOS</h2>
+  <p>Variedad para todas tus necesidades</p>
 
   <div class="grid">
 
     <div class="card">
       <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
       <div class="card-content">
-        <h3>Limpieza hogar</h3>
+        <h3>Limpieza Hogar</h3>
         <button onclick="location.href='productos.html'">Ver más</button>
       </div>
     </div>
@@ -262,7 +297,7 @@ cursor:pointer;
     <div class="card">
       <img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f">
       <div class="card-content">
-        <h3>Limpieza industrial</h3>
+        <h3>Limpieza Industrial</h3>
         <button onclick="location.href='productos.html'">Ver más</button>
       </div>
     </div>
@@ -270,7 +305,7 @@ cursor:pointer;
     <div class="card">
       <img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
       <div class="card-content">
-        <h3>Higiene personal</h3>
+        <h3>Higiene Personal</h3>
         <button onclick="location.href='productos.html'">Ver más</button>
       </div>
     </div>
@@ -289,16 +324,15 @@ cursor:pointer;
 <!-- OFERTA -->
 <section class="offer">
   <h2>OFERTAS DEL MES</h2>
-  <p>Hasta 30% descuento</p>
+  <p>Hasta 30% de descuento</p>
   <button onclick="location.href='productos.html'">Ver ofertas</button>
 </section>
 
 <!-- CONTACTO -->
 <section class="section contact">
-
   <div>
     <h2>¿POR QUÉ ELEGIRNOS?</h2>
-    <p>Atención personalizada, stock permanente y envíos rápidos.</p>
+    <p>Atención personalizada, stock permanente y entregas rápidas.</p>
   </div>
 
   <div class="form">
@@ -308,8 +342,12 @@ cursor:pointer;
     <textarea placeholder="Mensaje"></textarea>
     <button>Enviar</button>
   </div>
-
 </section>
+
+<!-- FOOTER -->
+<div class="footer">
+  CONTACTANOS - Nova Clean
+</div>
 
 </body>
 </html>
