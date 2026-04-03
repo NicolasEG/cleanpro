@@ -1,774 +1,93 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova Clean | Inicio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-dark: #07111f;
-      --bg-dark-2: #0d1b2d;
-      --bg-card: rgba(255,255,255,0.08);
-      --line: rgba(255,255,255,0.12);
-      --text: #ffffff;
-      --text-soft: #c6d2e2;
-      --text-dark: #0f172a;
-      --text-gray: #5b6472;
-      --white: #ffffff;
-      --shadow-xl: 0 30px 100px rgba(2, 8, 23, 0.35);
-      --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.12);
-      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
-      --container: 1280px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 30%, #f4f7fb 30%, #f8fbff 100%);
-      color: var(--text-dark);
-      overflow-x: hidden;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    button {
-      font: inherit;
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 40px));
-      margin: 0 auto;
-    }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      backdrop-filter: blur(16px);
-      background: rgba(7, 17, 31, 0.78);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
-    }
-
-    .header-inner {
-      min-height: 86px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      flex-shrink: 0;
-    }
-
-    .brand-mark {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.05));
-      border: 1px solid rgba(255,255,255,0.12);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
-    }
-
-    .brand-mark svg {
-      width: 26px;
-      height: 26px;
-      color: #d8e8f8;
-    }
-
-    .brand-text strong {
-      display: block;
-      color: var(--white);
-      font-size: 20px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-    }
-
-    .brand-text span {
-      display: block;
-      margin-top: 4px;
-      color: rgba(255,255,255,0.55);
-      font-size: 11px;
-      letter-spacing: 0.34em;
-      text-transform: uppercase;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      gap: 36px;
-      color: rgba(255,255,255,0.78);
-      font-size: 14px;
-      font-weight: 500;
-    }
-
-    .nav a {
-      position: relative;
-      transition: 0.25s ease;
-    }
-
-    .nav a::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -8px;
-      width: 0;
-      height: 1.5px;
-      background: rgba(255,255,255,0.75);
-      transition: width 0.25s ease;
-    }
-
-    .nav a:hover,
-    .nav a.active {
-      color: var(--white);
-    }
-
-    .nav a:hover::after,
-    .nav a.active::after {
-      width: 100%;
-    }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .menu-toggle {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      color: white;
-      cursor: pointer;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px 28px;
-      border-radius: 999px;
-      border: 1px solid transparent;
-      font-size: 14px;
-      font-weight: 700;
-      transition: 0.25s ease;
-      cursor: pointer;
-      white-space: nowrap;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-primary {
-      background: var(--white);
-      color: var(--text-dark);
-      box-shadow: 0 16px 40px rgba(255,255,255,0.14);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 24px 60px rgba(255,255,255,0.18);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.07);
-      color: var(--white);
-      border-color: rgba(255,255,255,0.15);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.24);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 36px 0 80px;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(80px);
-      pointer-events: none;
-      opacity: 0.55;
-    }
-
-    .hero::before {
-      width: 340px;
-      height: 340px;
-      background: rgba(192, 215, 240, 0.18);
-      top: 20px;
-      left: -120px;
-    }
-
-    .hero::after {
-      width: 300px;
-      height: 300px;
-      background: rgba(255,255,255,0.08);
-      right: -120px;
-      bottom: 30px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 38px;
-      align-items: center;
-    }
-
-    .hero-copy {
-      color: white;
-      padding-top: 24px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.75);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      backdrop-filter: blur(16px);
-    }
-
-    .eyebrow i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 14px rgba(255,255,255,0.95);
-    }
-
-    .hero-copy h1 {
-      margin-top: 24px;
-      font-size: clamp(44px, 6vw, 82px);
-      line-height: 0.94;
-      letter-spacing: -0.05em;
-      font-weight: 800;
-      max-width: 760px;
-    }
-
-    .hero-copy h1 .text-gradient {
-      display: block;
-      background: linear-gradient(90deg, #d9e6f4 0%, #ffffff 55%, #b4c7dc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-copy p {
-      margin-top: 26px;
-      max-width: 710px;
-      color: var(--text-soft);
-      font-size: 18px;
-      line-height: 1.9;
-    }
-
-    .hero-actions {
-      margin-top: 34px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .hero-benefits {
-      margin-top: 40px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-
-    .glass-card {
-      padding: 24px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      backdrop-filter: blur(16px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-      transition: 0.28s ease;
-    }
-
-    .glass-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.09);
-      border-color: rgba(255,255,255,0.18);
-    }
-
-    .glass-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .glass-icon svg {
-      width: 24px;
-      height: 24px;
-      color: white;
-    }
-
-    .glass-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: white;
-    }
-
-    .glass-card p {
-      margin-top: 10px;
-      font-size: 14px;
-      line-height: 1.8;
-      color: rgba(255,255,255,0.72);
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .visual-glow {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(70px);
-      pointer-events: none;
-    }
-
-    .visual-glow.one {
-      width: 220px;
-      height: 220px;
-      background: rgba(208,225,243,0.22);
-      left: -40px;
-      top: 80px;
-    }
-
-    .visual-glow.two {
-      width: 240px;
-      height: 240px;
-      background: rgba(255,255,255,0.10);
-      right: -20px;
-      bottom: 0;
-    }
-
-    .visual-frame {
-      position: relative;
-      padding: 14px;
-      border-radius: 34px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: var(--shadow-xl);
-      backdrop-filter: blur(16px);
-    }
-
-    .visual-image {
-      position: relative;
-      overflow: hidden;
-      border-radius: 28px;
-      min-height: 660px;
-      background: #0c1524;
-    }
-
-    .visual-image img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .visual-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(140deg, rgba(2,8,23,0.76) 0%, rgba(10,20,35,0.32) 44%, rgba(255,255,255,0.02) 100%),
-        radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 28%);
-    }
-
-    .floating-top,
-    .floating-bottom,
-    .floating-offer {
-      position: absolute;
-      border-radius: 26px;
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow-md);
-    }
-
-    .floating-top {
-      left: 24px;
-      right: 24px;
-      top: 24px;
-      padding: 18px 20px;
-      background: rgba(7, 17, 31, 0.50);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      color: white;
-    }
-
-    .mini-label {
-      color: rgba(255,255,255,0.55);
-      font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      font-weight: 700;
-    }
-
-    .mini-title {
-      margin-top: 6px;
-      font-size: 15px;
-      font-weight: 600;
-    }
-
-    .top-pill {
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.12);
-      font-size: 11px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      font-weight: 700;
-      color: white;
-    }
-
-    .floating-bottom {
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      backdrop-filter: none;
-    }
-
-    .floating-card,
-    .floating-offer {
-      background: rgba(255,255,255,0.10);
-      padding: 24px;
-    }
-
-    .floating-card h3 {
-      margin-top: 10px;
-      color: white;
-      font-size: 30px;
-      line-height: 1.1;
-    }
-
-    .floating-card p,
-    .floating-offer p {
-      margin-top: 12px;
-      color: rgba(255,255,255,0.76);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .floating-offer {
-      background: rgba(7, 17, 31, 0.64);
-    }
-
-    .offer-number {
-      margin-top: 10px;
-      font-size: 58px;
-      font-weight: 800;
-      color: white;
-      line-height: 1;
-    }
-
-    @media (max-width: 1200px) {
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-benefits {
-        grid-template-columns: 1fr;
-      }
-
-      .floating-bottom {
-        grid-template-columns: 1fr;
-      }
-
-      .visual-image {
-        min-height: 600px;
-      }
-    }
-
-    @media (max-width: 980px) {
-      .nav {
-        position: fixed;
-        top: 86px;
-        left: 20px;
-        right: 20px;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 24px;
-        background: rgba(7, 17, 31, 0.96);
-        border: 1px solid rgba(255,255,255,0.10);
-        border-radius: 28px;
-        box-shadow: var(--shadow-xl);
-      }
-
-      .nav.open {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        width: min(var(--container), calc(100% - 28px));
-      }
-
-      .header-inner {
-        min-height: 78px;
-      }
-
-      .brand-text strong {
-        font-size: 16px;
-      }
-
-      .brand-text span {
-        font-size: 10px;
-        letter-spacing: 0.22em;
-      }
-
-      .hero {
-        padding-bottom: 60px;
-      }
-
-      .hero-copy p {
-        font-size: 15px;
-        line-height: 1.8;
-      }
-
-      .visual-image {
-        min-height: 520px;
-      }
-
-      .floating-top {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nova Clean | Productos</title>
+
+<style>
+body{font-family:Arial;margin:0;background:#f5f5f5;}
+.container{max-width:1200px;margin:auto;padding:20px;}
+.nav{display:flex;gap:30px;background:#111;padding:20px;}
+.nav a{color:white;text-decoration:none;}
+.active{font-weight:bold;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+button{
+margin-top:10px;
+padding:10px;
+cursor:pointer;
+}
+</style>
 </head>
+
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand">
-        <div class="brand-mark">
-          <svg viewBox="0 0 24 24" fill="none">
-            <path d="M12 3c1.8 3.2 6 6.8 6 10.8A6 6 0 1 1 6 13.8C6 9.8 10.2 6.2 12 3Z" stroke="currentColor" stroke-width="1.8"/>
-            <path d="M9 15.5c.6 1 1.6 1.7 3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          </svg>
-        </div>
-        <div class="brand-text">
-          <strong>NOVA CLEAN</strong>
-          <span>SUPPLY SOLUTIONS</span>
-        </div>
-      </a>
 
-      <nav class="nav" id="mainNav">
-        <a href="index.html" class="active">Inicio</a>
-        <a href="productos.html">Productos</a>
-        <a href="carrito.html" id="headerCartNav">Carrito</a>
-      </nav>
+<nav class="nav">
+<a href="index.html">Inicio</a>
+<a href="productos.html" class="active">Productos</a>
+<a href="carrito.html">Carrito</a>
+</nav>
 
-      <div class="header-actions">
-        <a href="carrito.html" class="btn btn-secondary" id="headerCartButton">Ver Carrito</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
+<div class="container">
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            <i></i>
-            Soluciones de limpieza profesional
-          </div>
+<h2>Productos</h2>
 
-          <h1>
-            Productos de limpieza con imagen
-            <span class="text-gradient">corporativa y nivel premium</span>
-          </h1>
+<div class="grid">
 
-          <p>
-            Una página moderna, sobria y profesional para transmitir respaldo, orden y escala comercial. Ideal para presentar el negocio, llevar clientes al catálogo y permitir una experiencia de compra clara y visual.
-          </p>
+<div class="card">
+<h3>Lavandina</h3>
+<p>$4500</p>
+<button onclick="add(1,'Lavandina',4500)">Agregar</button>
+</div>
 
-          <div class="hero-actions">
-            <a href="productos.html" class="btn btn-primary">Ver productos</a>
-            <a href="carrito.html" class="btn btn-secondary">Ver carrito</a>
-          </div>
+<div class="card">
+<h3>Detergente</h3>
+<p>$6200</p>
+<button onclick="add(2,'Detergente',6200)">Agregar</button>
+</div>
 
-          <div class="hero-benefits">
-            <article class="glass-card">
-              <div class="glass-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M3 7h11v8H3V7Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M14 10h3l3 3v2h-6v-5Z" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="7.5" cy="17.5" r="1.7" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="17.5" cy="17.5" r="1.7" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <h3>Cobertura nacional</h3>
-              <p>Abastecimiento confiable para negocios, distribuidores y clientes corporativos en todo el país.</p>
-            </article>
+<div class="card">
+<h3>Jabón</h3>
+<p>$3900</p>
+<button onclick="add(3,'Jabón',3900)">Agregar</button>
+</div>
 
-            <article class="glass-card">
-              <div class="glass-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3l7 3v5c0 4.5-3 7.8-7 10-4-2.2-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3>Calidad certificada</h3>
-              <p>Productos seleccionados con estándares profesionales para generar resultados consistentes.</p>
-            </article>
+</div>
 
-            <article class="glass-card">
-              <div class="glass-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M16.5 6.5c0-1.7-1.8-3-4.5-3S7.5 4.8 7.5 6.5 9.3 9 12 9s4.5 1.3 4.5 3-1.8 3-4.5 3-4.5-1.3-4.5-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3>Precios competitivos</h3>
-              <p>Escalas mayoristas, promociones por volumen y atención comercial personalizada.</p>
-            </article>
-          </div>
-        </div>
+</div>
 
-        <div class="hero-visual">
-          <div class="visual-glow one"></div>
-          <div class="visual-glow two"></div>
+<script>
+function getCart(){
+return JSON.parse(localStorage.getItem("cart")||"[]")
+}
 
-          <div class="visual-frame">
-            <div class="visual-image">
-              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80" alt="Productos de limpieza premium" />
-              <div class="visual-overlay"></div>
+function saveCart(c){
+localStorage.setItem("cart",JSON.stringify(c))
+}
 
-              <div class="floating-top">
-                <div>
-                  <div class="mini-label">Corporate Supply</div>
-                  <div class="mini-title">Distribución profesional para hogar, comercio e industria</div>
-                </div>
-                <div class="top-pill">B2B / B2C</div>
-              </div>
+function add(id,name,price){
+let c=getCart()
+let p=c.find(x=>x.id==id)
 
-              <div class="floating-bottom">
-                <div class="floating-card">
-                  <div class="mini-label">Línea destacada</div>
-                  <h3>Soluciones institucionales</h3>
-                  <p>Presentación sobria, ideal para ventas mayoristas, distribuidores y clientes corporativos.</p>
-                </div>
-                <div class="floating-offer">
-                  <div class="mini-label">Oferta corporativa</div>
-                  <div class="offer-number">30%</div>
-                  <p>En compras por volumen para cuentas mayoristas y clientes recurrentes.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+if(p){p.qty++}
+else{c.push({id,name,price,qty:1})}
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    const headerCartButton = document.getElementById('headerCartButton');
-    const headerCartNav = document.getElementById('headerCartNav');
+saveCart(c)
+alert("Agregado al carrito")
+}
+</script>
 
-    if (menuToggle && mainNav) {
-      menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
-      });
-
-      mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('open');
-        });
-      });
-    }
-
-    function getCart() {
-      const savedCart = localStorage.getItem('novaCleanCart');
-      return savedCart ? JSON.parse(savedCart) : [];
-    }
-
-    function updateCartButton() {
-      const cart = getCart();
-      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-      const text = totalItems > 0 ? `Ver Carrito (${totalItems})` : 'Ver Carrito';
-      if (headerCartButton) headerCartButton.textContent = text;
-      if (headerCartNav) headerCartNav.textContent = totalItems > 0 ? `Carrito (${totalItems})` : 'Carrito';
-    }
-
-    updateCartButton();
-  </script>
 </body>
 </html>
