@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nova Clean | Inicio</title>
+  <title>Nova Clean | Carrito</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -11,31 +11,50 @@
     :root {
       --bg-dark: #07111f;
       --bg-dark-2: #0d1b2d;
-      --bg-card: rgba(255,255,255,0.08);
-      --line: rgba(255,255,255,0.12);
-      --text: #ffffff;
-      --text-soft: #c6d2e2;
+      --white: #ffffff;
       --text-dark: #0f172a;
       --text-gray: #5b6472;
-      --white: #ffffff;
+      --text-soft: #c6d2e2;
+      --line: rgba(255,255,255,0.12);
+      --line-soft: rgba(15,23,42,0.10);
+      --success: #00a650;
       --shadow-xl: 0 30px 100px rgba(2, 8, 23, 0.35);
       --shadow-lg: 0 18px 50px rgba(15, 23, 42, 0.12);
       --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.08);
       --container: 1280px;
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 30%, #f4f7fb 30%, #f8fbff 100%);
+      background: linear-gradient(180deg, #07111f 0%, #0d1b2d 35%, #f4f7fb 35%, #f8fbff 100%);
       color: var(--text-dark);
       overflow-x: hidden;
     }
 
-    img { display: block; max-width: 100%; }
-    a { text-decoration: none; color: inherit; }
-    button { font: inherit; }
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
 
     .container {
       width: min(var(--container), calc(100% - 40px));
@@ -78,7 +97,11 @@
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.06);
     }
 
-    .brand-mark svg { width: 26px; height: 26px; color: #d8e8f8; }
+    .brand-mark svg {
+      width: 26px;
+      height: 26px;
+      color: #d8e8f8;
+    }
 
     .brand-text strong {
       display: block;
@@ -123,26 +146,13 @@
     }
 
     .nav a:hover,
-    .nav a.active { color: var(--white); }
-
-    .nav a:hover::after,
-    .nav a.active::after { width: 100%; }
-
-    .header-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
+    .nav a.active {
+      color: var(--white);
     }
 
-    .menu-toggle {
-      display: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.12);
-      background: rgba(255,255,255,0.06);
-      color: white;
-      cursor: pointer;
+    .nav a:hover::after,
+    .nav a.active::after {
+      width: 100%;
     }
 
     .btn {
@@ -160,16 +170,8 @@
       white-space: nowrap;
     }
 
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-primary {
-      background: var(--white);
-      color: var(--text-dark);
-      box-shadow: 0 16px 40px rgba(255,255,255,0.14);
-    }
-
-    .btn-primary:hover {
-      box-shadow: 0 24px 60px rgba(255,255,255,0.18);
+    .btn:hover {
+      transform: translateY(-2px);
     }
 
     .btn-secondary {
@@ -184,309 +186,533 @@
       border-color: rgba(255,255,255,0.24);
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 36px 0 80px;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(80px);
-      pointer-events: none;
-      opacity: 0.55;
-    }
-
-    .hero::before {
-      width: 340px;
-      height: 340px;
-      background: rgba(192, 215, 240, 0.18);
-      top: 20px;
-      left: -120px;
-    }
-
-    .hero::after {
-      width: 300px;
-      height: 300px;
-      background: rgba(255,255,255,0.08);
-      right: -120px;
-      bottom: 30px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.02fr 0.98fr;
-      gap: 38px;
-      align-items: center;
-    }
-
-    .hero-copy {
+    .btn-dark {
+      background: #0f172a;
       color: white;
-      padding-top: 24px;
+      box-shadow: var(--shadow-md);
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 12px 18px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.75);
+    .btn-dark:hover {
+      background: #172136;
+    }
+
+    .btn-mercado {
+      background: #009ee3;
+      color: white;
+      box-shadow: 0 12px 30px rgba(0,158,227,0.28);
+    }
+
+    .btn-mercado:hover {
+      background: #0aa8ee;
+    }
+
+    .cart-section {
+      padding: 84px 0 110px;
+    }
+
+    .page-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 36px;
+      color: white;
+    }
+
+    .page-head small {
+      display: block;
+      color: rgba(255,255,255,0.56);
       font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
       text-transform: uppercase;
-      backdrop-filter: blur(16px);
+      letter-spacing: 0.32em;
+      font-weight: 700;
+      margin-bottom: 14px;
     }
 
-    .eyebrow i {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: #ffffff;
-      box-shadow: 0 0 14px rgba(255,255,255,0.95);
-    }
-
-    .hero-copy h1 {
-      margin-top: 24px;
-      font-size: clamp(44px, 6vw, 82px);
-      line-height: 0.94;
+    .page-head h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      line-height: 0.98;
       letter-spacing: -0.05em;
-      font-weight: 800;
       max-width: 760px;
     }
 
-    .hero-copy h1 .text-gradient {
-      display: block;
-      background: linear-gradient(90deg, #d9e6f4 0%, #ffffff 55%, #b4c7dc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .hero-copy p {
-      margin-top: 26px;
-      max-width: 710px;
+    .page-head p {
+      margin-top: 18px;
       color: var(--text-soft);
-      font-size: 18px;
+      font-size: 17px;
       line-height: 1.9;
+      max-width: 760px;
     }
 
-    .hero-actions {
-      margin-top: 34px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .hero-benefits {
-      margin-top: 40px;
+    .cart-layout {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.52fr);
+      gap: 28px;
+      align-items: start;
     }
 
-    .glass-card {
-      padding: 24px;
-      border-radius: 28px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      backdrop-filter: blur(16px);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
-      transition: 0.28s ease;
+    .panel {
+      background: white;
+      border-radius: 34px;
+      border: 1px solid rgba(15,23,42,0.08);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
     }
 
-    .glass-card:hover {
-      transform: translateY(-4px);
-      background: rgba(255,255,255,0.09);
-      border-color: rgba(255,255,255,0.18);
-    }
-
-    .glass-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 18px;
+    .cart-panel-header {
+      padding: 28px 30px;
+      border-bottom: 1px solid rgba(15,23,42,0.08);
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.14), rgba(255,255,255,0.04));
-      border: 1px solid rgba(255,255,255,0.12);
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .glass-icon svg { width: 24px; height: 24px; color: white; }
-
-    .glass-card h3 {
-      font-size: 18px;
-      font-weight: 700;
-      color: white;
+    .cart-panel-header h2 {
+      font-size: 30px;
+      letter-spacing: -0.03em;
+      color: #0f172a;
     }
 
-    .glass-card p {
-      margin-top: 10px;
+    .cart-panel-header p {
+      margin-top: 8px;
+      color: var(--text-gray);
       font-size: 14px;
       line-height: 1.8;
-      color: rgba(255,255,255,0.72);
     }
 
-    .hero-visual { position: relative; }
-
-    .visual-glow {
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(70px);
-      pointer-events: none;
+    .cart-badge {
+      min-width: 56px;
+      height: 56px;
+      padding: 0 18px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f172a;
+      color: white;
+      font-size: 18px;
+      font-weight: 800;
     }
 
-    .visual-glow.one {
-      width: 220px;
-      height: 220px;
-      background: rgba(208,225,243,0.22);
-      left: -40px;
-      top: 80px;
+    .cart-items {
+      padding: 18px;
+      display: grid;
+      gap: 16px;
     }
 
-    .visual-glow.two {
-      width: 240px;
-      height: 240px;
-      background: rgba(255,255,255,0.10);
-      right: -20px;
-      bottom: 0;
-    }
-
-    .visual-frame {
-      position: relative;
-      padding: 14px;
-      border-radius: 34px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      box-shadow: var(--shadow-xl);
-      backdrop-filter: blur(16px);
-    }
-
-    .visual-image {
-      position: relative;
-      overflow: hidden;
+    .cart-item {
+      display: grid;
+      grid-template-columns: 112px minmax(0, 1fr) auto;
+      gap: 18px;
+      padding: 18px;
       border-radius: 28px;
-      min-height: 660px;
-      background: #0c1524;
+      border: 1px solid rgba(15,23,42,0.08);
+      background: #fbfcfe;
+      align-items: center;
+      transition: 0.25s ease;
     }
 
-    .visual-image img {
-      position: absolute;
-      inset: 0;
+    .cart-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(15,23,42,0.08);
+    }
+
+    .item-thumb {
+      width: 112px;
+      height: 112px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: #e8eef6;
+      flex-shrink: 0;
+    }
+
+    .item-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
-    .visual-overlay {
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(140deg, rgba(2,8,23,0.76) 0%, rgba(10,20,35,0.32) 44%, rgba(255,255,255,0.02) 100%),
-        radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 28%);
+    .item-info {
+      min-width: 0;
     }
 
-    .floating-top,
-    .floating-bottom,
-    .floating-offer {
-      position: absolute;
-      border-radius: 26px;
-      backdrop-filter: blur(16px);
-      border: 1px solid rgba(255,255,255,0.12);
-      box-shadow: var(--shadow-md);
-    }
-
-    .floating-top {
-      left: 24px;
-      right: 24px;
-      top: 24px;
-      padding: 18px 20px;
-      background: rgba(7, 17, 31, 0.50);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      color: white;
-    }
-
-    .mini-label {
-      color: rgba(255,255,255,0.55);
+    .item-tag {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef4fa;
+      color: #5a6a7f;
       font-size: 11px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
       font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
     }
 
-    .mini-title {
-      margin-top: 6px;
-      font-size: 15px;
+    .item-info h3 {
+      font-size: 22px;
+      line-height: 1.15;
+      color: #0f172a;
+      letter-spacing: -0.03em;
+    }
+
+    .item-info p {
+      margin-top: 10px;
+      color: var(--text-gray);
+      font-size: 14px;
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .item-meta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .item-price,
+    .item-unit {
+      font-size: 14px;
+      color: #526071;
+      background: #f2f6fb;
+      border-radius: 999px;
+      padding: 10px 14px;
       font-weight: 600;
     }
 
-    .top-pill {
-      padding: 12px 16px;
+    .item-actions {
+      display: flex;
+      flex-direction: column;
+      align-items: end;
+      gap: 14px;
+      min-width: 158px;
+    }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
       border-radius: 999px;
+      background: #eef4fa;
+      border: 1px solid rgba(15,23,42,0.08);
+    }
+
+    .qty-btn {
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 50%;
+      background: white;
+      color: #0f172a;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.08);
+    }
+
+    .qty-number {
+      min-width: 30px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .item-total {
+      font-size: 28px;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.04em;
+    }
+
+    .remove-btn {
+      border: none;
+      background: transparent;
+      color: #7d8794;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .remove-btn:hover {
+      color: #0f172a;
+    }
+
+    .summary-panel {
+      position: sticky;
+      top: 110px;
+      background: linear-gradient(180deg, #0b1424 0%, #07111f 100%);
+      color: white;
+      border-radius: 34px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .summary-top {
+      position: relative;
+      padding: 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      overflow: hidden;
+    }
+
+    .summary-top::before,
+    .summary-top::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(56px);
+      pointer-events: none;
+      opacity: 0.34;
+    }
+
+    .summary-top::before {
+      width: 180px;
+      height: 180px;
       background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.12);
+      top: -90px;
+      right: -60px;
+    }
+
+    .summary-top::after {
+      width: 140px;
+      height: 140px;
+      background: rgba(0,158,227,0.18);
+      bottom: -70px;
+      left: -40px;
+    }
+
+    .summary-top small {
+      display: block;
+      color: rgba(255,255,255,0.56);
       font-size: 11px;
-      letter-spacing: 0.22em;
       text-transform: uppercase;
+      letter-spacing: 0.32em;
+      font-weight: 700;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .summary-top h3 {
+      font-size: 34px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .summary-top p {
+      margin-top: 14px;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.8;
+      position: relative;
+      z-index: 2;
+    }
+
+    .summary-body {
+      padding: 24px 28px 28px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .summary-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+    }
+
+    .summary-row strong {
+      color: white;
+      font-size: 15px;
+    }
+
+    .summary-row.total {
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 18px;
       font-weight: 700;
       color: white;
     }
 
-    .floating-bottom {
-      left: 24px;
-      right: 24px;
-      bottom: 24px;
-      display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 16px;
-      background: transparent;
-      border: none;
-      box-shadow: none;
-      backdrop-filter: none;
+    .summary-row.total strong {
+      font-size: 28px;
+      letter-spacing: -0.04em;
     }
 
-    .floating-card,
-    .floating-offer {
-      background: rgba(255,255,255,0.10);
-      padding: 24px;
+    .payment-box {
+      margin-top: 8px;
+      border-radius: 28px;
+      padding: 20px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    .floating-card h3 {
-      margin-top: 10px;
+    .payment-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .payment-head h4 {
+      font-size: 18px;
       color: white;
-      font-size: 30px;
-      line-height: 1.1;
     }
 
-    .floating-card p,
-    .floating-offer p {
-      margin-top: 12px;
-      color: rgba(255,255,255,0.76);
-      font-size: 14px;
-      line-height: 1.8;
-    }
-
-    .floating-offer {
-      background: rgba(7, 17, 31, 0.64);
-    }
-
-    .offer-number {
-      margin-top: 10px;
-      font-size: 58px;
+    .mp-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(0,158,227,0.16);
+      color: #8edcff;
+      font-size: 11px;
       font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: 1px solid rgba(0,158,227,0.22);
+    }
+
+    .payment-demo {
+      border-radius: 22px;
+      background: white;
+      padding: 18px;
+      box-shadow: 0 16px 34px rgba(2,8,23,0.22);
+    }
+
+    .mp-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .mp-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .mp-logo {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00b1ea, #0d7cff);
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .mp-logo::before {
+      content: "$";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       color: white;
-      line-height: 1;
+      font-weight: 800;
+      font-size: 18px;
+    }
+
+    .mp-status {
+      color: var(--success);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .mp-card {
+      border-radius: 18px;
+      padding: 18px;
+      background: linear-gradient(135deg, #ecf8ff, #ffffff);
+      border: 1px solid rgba(15,23,42,0.08);
+    }
+
+    .mp-card small {
+      display: block;
+      color: #6a7380;
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .mp-card strong {
+      display: block;
+      font-size: 26px;
+      letter-spacing: -0.04em;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+
+    .mp-card p {
+      color: #5c6775;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .payment-features {
+      margin-top: 14px;
+      display: grid;
+      gap: 10px;
+    }
+
+    .payment-features li {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.72);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .payment-features li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00b1ea;
+      box-shadow: 0 0 12px rgba(0,177,234,0.7);
+      flex-shrink: 0;
+    }
+
+    .summary-actions {
+      display: grid;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .empty-state {
+      padding: 34px 26px 40px;
+      text-align: center;
+      color: #657083;
+      font-size: 15px;
+      line-height: 1.9;
+    }
+
+    .empty-state strong {
+      display: block;
+      color: #0f172a;
+      font-size: 24px;
+      margin-bottom: 10px;
+      letter-spacing: -0.03em;
     }
 
     .toast {
@@ -513,47 +739,79 @@
       opacity: 1;
     }
 
-    @media (max-width: 1200px) {
-      .hero-grid { grid-template-columns: 1fr; }
-      .hero-benefits { grid-template-columns: 1fr; }
-      .floating-bottom { grid-template-columns: 1fr; }
-      .visual-image { min-height: 600px; }
-    }
-
-    @media (max-width: 980px) {
-      .nav {
-        position: fixed;
-        top: 86px;
-        left: 20px;
-        right: 20px;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 20px;
-        padding: 24px;
-        background: rgba(7, 17, 31, 0.96);
-        border: 1px solid rgba(255,255,255,0.10);
-        border-radius: 28px;
-        box-shadow: var(--shadow-xl);
+    @media (max-width: 1180px) {
+      .cart-layout {
+        grid-template-columns: 1fr;
       }
 
-      .nav.open { display: flex; }
-      .menu-toggle {
-        display: inline-flex;
+      .summary-panel {
+        position: relative;
+        top: 0;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .nav {
+        display: none;
+      }
+
+      .page-head {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cart-item {
+        grid-template-columns: 90px minmax(0,1fr);
+      }
+
+      .item-actions {
+        grid-column: 1 / -1;
+        flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+        min-width: 0;
       }
     }
 
     @media (max-width: 768px) {
-      .container { width: min(var(--container), calc(100% - 28px)); }
-      .header-inner { min-height: 78px; }
-      .brand-text strong { font-size: 16px; }
-      .brand-text span { font-size: 10px; letter-spacing: 0.22em; }
-      .hero { padding-bottom: 60px; }
-      .hero-copy p { font-size: 15px; line-height: 1.8; }
-      .visual-image { min-height: 520px; }
-      .floating-top {
+      .container {
+        width: min(var(--container), calc(100% - 28px));
+      }
+
+      .header-inner {
+        min-height: 78px;
+      }
+
+      .brand-text strong {
+        font-size: 16px;
+      }
+
+      .brand-text span {
+        font-size: 10px;
+        letter-spacing: 0.22em;
+      }
+
+      .cart-section {
+        padding: 64px 0 90px;
+      }
+
+      .cart-panel-header,
+      .summary-top,
+      .summary-body {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .cart-item {
+        grid-template-columns: 1fr;
+      }
+
+      .item-thumb {
+        width: 100%;
+        height: 220px;
+      }
+
+      .item-actions {
         flex-direction: column;
         align-items: flex-start;
       }
@@ -576,155 +834,278 @@
         </div>
       </a>
 
-      <nav class="nav" id="mainNav">
-        <a href="index.html" class="active">Inicio</a>
+      <nav class="nav">
+        <a href="index.html">Inicio</a>
         <a href="productos.html">Productos</a>
-        <a href="carrito.html" id="headerCartNav">Carrito</a>
+        <a href="carrito.html" class="active">Carrito</a>
       </nav>
 
-      <div class="header-actions">
-        <a href="carrito.html" class="btn btn-secondary" id="headerCartButton">Ver Carrito</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </button>
-      </div>
+      <a href="productos.html" class="btn btn-secondary">Seguir comprando</a>
     </div>
   </header>
 
   <main>
-    <section class="hero" id="inicio">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <div class="eyebrow">
-            <i></i>
-            Soluciones de limpieza profesional
-          </div>
-
-          <h1>
-            Productos de limpieza con imagen
-            <span class="text-gradient">corporativa y nivel premium</span>
-          </h1>
-
-          <p>
-            Una página moderna, sobria y profesional para transmitir respaldo, orden y escala comercial. Ideal para presentar el negocio, llevar clientes al catálogo y permitir una experiencia de compra clara y visual.
-          </p>
-
-          <div class="hero-actions">
-            <a href="productos.html" class="btn btn-primary">Ver productos</a>
-            <a href="carrito.html" class="btn btn-secondary">Ver carrito</a>
-          </div>
-
-          <div class="hero-benefits">
-            <article class="glass-card">
-              <div class="glass-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M3 7h11v8H3V7Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="M14 10h3l3 3v2h-6v-5Z" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="7.5" cy="17.5" r="1.7" stroke="currentColor" stroke-width="1.8"/>
-                  <circle cx="17.5" cy="17.5" r="1.7" stroke="currentColor" stroke-width="1.8"/>
-                </svg>
-              </div>
-              <h3>Cobertura nacional</h3>
-              <p>Abastecimiento confiable para negocios, distribuidores y clientes corporativos en todo el país.</p>
-            </article>
-
-            <article class="glass-card">
-              <div class="glass-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 3l7 3v5c0 4.5-3 7.8-7 10-4-2.2-7-5.5-7-10V6l7-3Z" stroke="currentColor" stroke-width="1.8"/>
-                  <path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              </div>
-              <h3>Calidad certificada</h3>
-              <p>Productos seleccionados con estándares profesionales para generar resultados consistentes.</p>
-            </article>
-
-            <article class="glass-card">
-              <div class="glass-icon">
-                <svg viewBox="0 0 24 24" fill="none">
-                  <path d="M12 2v20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                  <path d="M16.5 6.5c0-1.7-1.8-3-4.5-3S7.5 4.8 7.5 6.5 9.3 9 12 9s4.5 1.3 4.5 3-1.8 3-4.5 3-4.5-1.3-4.5-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <h3>Precios competitivos</h3>
-              <p>Escalas mayoristas, promociones por volumen y atención comercial personalizada.</p>
-            </article>
+    <section class="cart-section">
+      <div class="container">
+        <div class="page-head">
+          <div>
+            <small>Checkout</small>
+            <h1>Tu carrito de compra</h1>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="visual-glow one"></div>
-          <div class="visual-glow two"></div>
+        <div class="cart-layout">
+          <section class="panel">
+            <div class="cart-panel-header">
+              <div>
+                <h2>Productos seleccionados</h2>
+                <p>Listado visual del pedido con imagen, cantidad, precio unitario y total por producto.</p>
+              </div>
+              <div class="cart-badge" id="cartCount">0</div>
+            </div>
 
-          <div class="visual-frame">
-            <div class="visual-image">
-              <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1400&q=80" alt="Productos de limpieza premium" />
-              <div class="visual-overlay"></div>
+            <div class="cart-items" id="cartItems"></div>
+          </section>
 
-              <div class="floating-top">
-                <div>
-                  <div class="mini-label">Corporate Supply</div>
-                  <div class="mini-title">Distribución profesional para hogar, comercio e industria</div>
-                </div>
-                <div class="top-pill">B2B / B2C</div>
+          <aside class="summary-panel">
+            <div class="summary-top">
+              <small>Resumen</small>
+              <h3>Finalizar compra</h3>
+              <p>Diseñado para verse sólido, claro y confiable, con una demo visual de Mercado Pago lista para presentar al cliente.</p>
+            </div>
+
+            <div class="summary-body">
+              <div class="summary-row">
+                <span>Subtotal</span>
+                <strong id="subtotalPrice">$0</strong>
+              </div>
+              <div class="summary-row">
+                <span>Envío estimado</span>
+                <strong id="shippingPrice">$0</strong>
+              </div>
+              <div class="summary-row">
+                <span>Bonificación demo</span>
+                <strong id="discountPrice">-$0</strong>
+              </div>
+              <div class="summary-row total">
+                <span>Total</span>
+                <strong id="totalPrice">$0</strong>
               </div>
 
-              <div class="floating-bottom">
-                <div class="floating-card">
-                  <div class="mini-label">Línea destacada</div>
-                  <h3>Soluciones institucionales</h3>
-                  <p>Presentación sobria, ideal para ventas mayoristas, distribuidores y clientes corporativos.</p>
+              <div class="payment-box">
+                <div class="payment-head">
+                  <h4>Pago online</h4>
+                  <div class="mp-pill">Mercado Pago Demo</div>
                 </div>
-                <div class="floating-offer">
-                  <div class="mini-label">Oferta corporativa</div>
-                  <div class="offer-number">30%</div>
-                  <p>En compras por volumen para cuentas mayoristas y clientes recurrentes.</p>
+
+                <div class="payment-demo">
+                  <div class="mp-top">
+                    <div class="mp-brand">
+                      <div class="mp-logo"></div>
+                      Mercado Pago
+                    </div>
+                    <div class="mp-status">Activo</div>
+                  </div>
+
+                  <div class="mp-card">
+                    <small>Checkout Pro</small>
+                    <strong id="mpAmount">$0</strong>
+                    <p>Simulación visual de un checkout integrado para mostrar medios de pago, cuotas y experiencia final del usuario.</p>
+                  </div>
                 </div>
+
+                <ul class="payment-features">
+                  <li>Tarjetas de crédito y débito</li>
+                  <li>Saldo en cuenta y transferencias</li>
+                  <li>Pago seguro con redirección al checkout</li>
+                </ul>
+              </div>
+
+              <div class="summary-actions">
+                <button class="btn btn-mercado" id="mercadoPagoBtn">Pagar con Mercado Pago</button>
+                <button class="btn btn-dark" id="clearCartBtn">Vaciar carrito</button>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </section>
   </main>
 
-  <div class="toast" id="cartToast"></div>
+  <div class="toast" id="toast"></div>
 
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav');
-    const headerCartButton = document.getElementById('headerCartButton');
-    const headerCartNav = document.getElementById('headerCartNav');
-    const cartToast = document.getElementById('cartToast');
-
-    if (menuToggle && mainNav) {
-      menuToggle.addEventListener('click', () => {
-        mainNav.classList.toggle('open');
-      });
-
-      mainNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-          mainNav.classList.remove('open');
-        });
-      });
-    }
+    const cartItems = document.getElementById('cartItems');
+    const cartCount = document.getElementById('cartCount');
+    const subtotalPrice = document.getElementById('subtotalPrice');
+    const shippingPrice = document.getElementById('shippingPrice');
+    const discountPrice = document.getElementById('discountPrice');
+    const totalPrice = document.getElementById('totalPrice');
+    const mpAmount = document.getElementById('mpAmount');
+    const clearCartBtn = document.getElementById('clearCartBtn');
+    const mercadoPagoBtn = document.getElementById('mercadoPagoBtn');
+    const toast = document.getElementById('toast');
 
     function getCart() {
       const savedCart = localStorage.getItem('novaCleanCart');
       return savedCart ? JSON.parse(savedCart) : [];
     }
 
-    function updateCartButton() {
-      const cart = getCart();
-      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
-      const text = totalItems > 0 ? `Ver Carrito (${totalItems})` : 'Ver Carrito';
-      if (headerCartButton) headerCartButton.textContent = text;
-      if (headerCartNav) headerCartNav.textContent = totalItems > 0 ? `Carrito (${totalItems})` : 'Carrito';
+    function saveCart(cart) {
+      localStorage.setItem('novaCleanCart', JSON.stringify(cart));
     }
 
-    updateCartButton();
+    function formatPrice(value) {
+      return new Intl.NumberFormat('es-AR', {
+        style: 'currency',
+        currency: 'ARS',
+        maximumFractionDigits: 0
+      }).format(value);
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add('show');
+      clearTimeout(window.toastTimer);
+      window.toastTimer = setTimeout(() => {
+        toast.classList.remove('show');
+      }, 1800);
+    }
+
+    function increaseQty(id) {
+      const cart = getCart();
+      const item = cart.find(product => product.id === id);
+      if (!item) return;
+      item.quantity += 1;
+      saveCart(cart);
+      renderCart();
+    }
+
+    function decreaseQty(id) {
+      const cart = getCart();
+      const item = cart.find(product => product.id === id);
+      if (!item) return;
+
+      if (item.quantity > 1) {
+        item.quantity -= 1;
+      } else {
+        const index = cart.findIndex(product => product.id === id);
+        cart.splice(index, 1);
+      }
+
+      saveCart(cart);
+      renderCart();
+    }
+
+    function removeItem(id) {
+      const cart = getCart().filter(item => item.id !== id);
+      saveCart(cart);
+      renderCart();
+      showToast('Producto eliminado del carrito');
+    }
+
+    function renderEmpty() {
+      cartItems.innerHTML = `
+        <div class="empty-state">
+          <strong>Tu carrito está vacío</strong>
+          Todavía no agregaste productos desde la página de catálogo.<br>
+          Cuando sumes artículos, se van a mostrar acá con imagen, cantidad y resumen de compra.
+        </div>
+      `;
+
+      cartCount.textContent = '0';
+      subtotalPrice.textContent = formatPrice(0);
+      shippingPrice.textContent = formatPrice(0);
+      discountPrice.textContent = `-${formatPrice(0)}`;
+      totalPrice.textContent = formatPrice(0);
+      mpAmount.textContent = formatPrice(0);
+    }
+
+    function renderCart() {
+      const cart = getCart();
+
+      if (!cart.length) {
+        renderEmpty();
+        return;
+      }
+
+      cartItems.innerHTML = '';
+
+      cart.forEach((item, index) => {
+        const totalItem = item.price * item.quantity;
+        const row = document.createElement('article');
+        row.className = 'cart-item';
+        row.innerHTML = `
+          <div class="item-thumb">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+
+          <div class="item-info">
+            <div class="item-tag">Producto 0${index + 1}</div>
+            <h3>${item.name}</h3>
+            <p>Producto agregado desde el catálogo principal. Esta tarjeta simula una experiencia real de carrito con miniatura y detalle comercial.</p>
+            <div class="item-meta">
+              <div class="item-unit">Unitario: ${formatPrice(item.price)}</div>
+              <div class="item-price">Cantidad seleccionada: ${item.quantity}</div>
+            </div>
+          </div>
+
+          <div class="item-actions">
+            <div class="qty-control">
+              <button class="qty-btn" data-action="decrease" data-id="${item.id}">−</button>
+              <div class="qty-number">${item.quantity}</div>
+              <button class="qty-btn" data-action="increase" data-id="${item.id}">+</button>
+            </div>
+            <div class="item-total">${formatPrice(totalItem)}</div>
+            <button class="remove-btn" data-action="remove" data-id="${item.id}">Quitar producto</button>
+          </div>
+        `;
+        cartItems.appendChild(row);
+      });
+
+      const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
+      const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+      const shipping = subtotal > 0 ? 2500 : 0;
+      const discount = subtotal >= 15000 ? 1500 : 0;
+      const total = subtotal + shipping - discount;
+
+      cartCount.textContent = totalItems;
+      subtotalPrice.textContent = formatPrice(subtotal);
+      shippingPrice.textContent = formatPrice(shipping);
+      discountPrice.textContent = `-${formatPrice(discount)}`;
+      totalPrice.textContent = formatPrice(total);
+      mpAmount.textContent = formatPrice(total);
+
+      document.querySelectorAll('[data-action="increase"]').forEach(button => {
+        button.addEventListener('click', () => increaseQty(button.dataset.id));
+      });
+
+      document.querySelectorAll('[data-action="decrease"]').forEach(button => {
+        button.addEventListener('click', () => decreaseQty(button.dataset.id));
+      });
+
+      document.querySelectorAll('[data-action="remove"]').forEach(button => {
+        button.addEventListener('click', () => removeItem(button.dataset.id));
+      });
+    }
+
+    clearCartBtn.addEventListener('click', () => {
+      localStorage.removeItem('novaCleanCart');
+      renderCart();
+      showToast('Carrito vaciado');
+    });
+
+    mercadoPagoBtn.addEventListener('click', () => {
+      const cart = getCart();
+      if (!cart.length) {
+        showToast('Agregá productos antes de avanzar al pago');
+        return;
+      }
+
+      showToast('Demo de Mercado Pago activa. Después conectamos el checkout real.');
+    });
+
+    renderCart();
   </script>
 </body>
 </html>
