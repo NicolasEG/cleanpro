@@ -1,77 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nova Clean | Carrito</title>
+        <span class="brand-logo">N</span>
+        <span>NOVA CLEAN</span>
+      </a>
 
-<style>
-body{font-family:Arial;margin:0;background:#f5f5f5;}
-.container{max-width:900px;margin:auto;padding:20px;}
-.nav{display:flex;gap:30px;background:#111;padding:20px;}
-.nav a{color:white;text-decoration:none;}
-.active{font-weight:bold;}
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="carrito.html" class="active">Carrito</a></li>
+      </ul>
 
-.item{
-background:white;
-padding:15px;
-margin-bottom:10px;
-border-radius:10px;
-display:flex;
-justify-content:space-between;
-}
+      <div class="nav-actions">
+        <a href="carrito.html" class="cart-pill">Ver carrito (<span data-cart-count>0</span>)</a>
+      </div>
+    </div>
+  </header>
 
-.total{
-font-size:22px;
-margin-top:20px;
-}
-</style>
-</head>
+  <section class="section" style="padding-top:46px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Tu carrito</h2>
+        </div>
+        <p>
+          Vista limpia, moderna y ordenada para mostrar una compra online prolija y profesional.
+        </p>
+      </div>
 
-<body>
+      <div id="empty-cart" class="banner" style="display:none; margin-bottom:28px;">
+        <h3>Tu carrito está vacío</h3>
+        <p>Agregá productos desde la página de catálogo para ver cómo quedaría la experiencia de compra.</p>
+        <div style="margin-top:18px;">
+          <a href="productos.html" class="btn btn-primary">Ir a productos</a>
+        </div>
+      </div>
 
-<nav class="nav">
-<a href="index.html">Inicio</a>
-<a href="productos.html">Productos</a>
-<a href="carrito.html" class="active">Carrito</a>
-</nav>
+      <div class="cart-layout">
+        <div class="cart-table">
+          <div class="cart-header">
+            <div>Producto</div>
+            <div>Cantidad</div>
+            <div>Subtotal</div>
+            <div>Acción</div>
+          </div>
 
-<div class="container">
+          <div id="cart-items"></div>
+        </div>
 
-<h2>Carrito</h2>
+        <aside>
+          <div class="summary-box">
+            <h3>Resumen</h3>
+            <div class="summary-row">
+              <span>Subtotal</span>
+              <strong id="subtotal">$0</strong>
+            </div>
+            <div class="summary-row">
+              <span>Envío</span>
+              <strong>A coordinar</strong>
+            </div>
+            <div class="summary-row total">
+              <span>Total</span>
+              <strong id="total">$0</strong>
+            </div>
 
-<div id="list"></div>
+            <button class="btn btn-primary">Finalizar pedido</button>
+            <button class="btn btn-secondary" style="width:100%;margin-top:12px;background:#eff6ff;color:var(--primary);border:none;" onclick="clearCart()">Vaciar carrito</button>
+          </div>
 
-<div class="total" id="total"></div>
+          <div class="info-box">
+            <h4>Presentación ideal para cliente</h4>
+            <p>
+              Este carrito está pensado como demo visual: simple, atractivo y fácil de entender para mostrar cómo funcionaría una tienda real.
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-</div>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>NOVA CLEAN</strong> · Carrito online</div>
+      <div>Diseño demo moderno para presentación comercial</div>
+    </div>
+  </footer>
 
-<script>
-function getCart(){
-return JSON.parse(localStorage.getItem("cart")||"[]")
-}
-
-function render(){
-let c=getCart()
-let html=""
-let total=0
-
-c.forEach(p=>{
-total+=p.price*p.qty
-
-html+=`
-<div class="item">
-<span>${p.name} x${p.qty}</span>
-<span>$${p.price*p.qty}</span>
-</div>`
-})
-
-document.getElementById("list").innerHTML=html
-document.getElementById("total").innerText="Total: $"+total
-}
-
-render()
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
