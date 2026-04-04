@@ -1,93 +1,75 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nova Clean | Productos</title>
+          <div class="card-body">
+            <span class="pill">Industrial</span>
+            <h3>Detergente concentrado</h3>
+            <p>Ideal para ventas por unidad o por volumen en negocios y cocinas.</p>
+            <div class="price">$3.800</div>
+            <button class="btn add-btn" onclick="addToCart('Detergente concentrado', 3800, 'https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
 
-<style>
-body{font-family:Arial;margin:0;background:#f5f5f5;}
-.container{max-width:1200px;margin:auto;padding:20px;}
-.nav{display:flex;gap:30px;background:#111;padding:20px;}
-.nav a{color:white;text-decoration:none;}
-.active{font-weight:bold;}
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80" alt="Pack esponjas premium">
+          </div>
+          <div class="card-body">
+            <span class="pill">Oferta</span>
+            <h3>Pack esponjas premium</h3>
+            <p>Un producto visualmente atractivo para complementar la tienda.</p>
+            <div class="price">$1.950</div>
+            <button class="btn add-btn" onclick="addToCart('Pack esponjas premium', 1950, 'https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-}
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1616628182509-6f6d12e72666?auto=format&fit=crop&w=900&q=80" alt="Jabón líquido">
+          </div>
+          <div class="card-body">
+            <span class="pill">Higiene</span>
+            <h3>Jabón líquido</h3>
+            <p>Presentación limpia y moderna para sumar variedad al catálogo.</p>
+            <div class="price">$2.200</div>
+            <button class="btn add-btn" onclick="addToCart('Jabón líquido', 2200, 'https://images.unsplash.com/photo-1616628182509-6f6d12e72666?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
 
-.card{
-background:white;
-padding:20px;
-border-radius:10px;
-}
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=80" alt="Guantes de limpieza">
+          </div>
+          <div class="card-body">
+            <span class="pill">Descartables</span>
+            <h3>Guantes de limpieza</h3>
+            <p>Producto de rotación frecuente con buena presencia visual en la tienda.</p>
+            <div class="price">$1.600</div>
+            <button class="btn add-btn" onclick="addToCart('Guantes de limpieza', 1600, 'https://images.unsplash.com/photo-1585421514738-01798e348b17?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
 
-button{
-margin-top:10px;
-padding:10px;
-cursor:pointer;
-}
-</style>
-</head>
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80" alt="Paños multiuso">
+          </div>
+          <div class="card-body">
+            <span class="pill">Recomendado</span>
+            <h3>Paños multiuso</h3>
+            <p>Ideal para reforzar la sensación de un catálogo completo y variado.</p>
+            <div class="price">$1.450</div>
+            <button class="btn add-btn" onclick="addToCart('Paños multiuso', 1450, 'https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<body>
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>NOVA CLEAN</strong> · Catálogo online</div>
+      <div>Diseño demo moderno para presentación comercial</div>
+    </div>
+  </footer>
 
-<nav class="nav">
-<a href="index.html">Inicio</a>
-<a href="productos.html" class="active">Productos</a>
-<a href="carrito.html">Carrito</a>
-</nav>
-
-<div class="container">
-
-<h2>Productos</h2>
-
-<div class="grid">
-
-<div class="card">
-<h3>Lavandina</h3>
-<p>$4500</p>
-<button onclick="add(1,'Lavandina',4500)">Agregar</button>
-</div>
-
-<div class="card">
-<h3>Detergente</h3>
-<p>$6200</p>
-<button onclick="add(2,'Detergente',6200)">Agregar</button>
-</div>
-
-<div class="card">
-<h3>Jabón</h3>
-<p>$3900</p>
-<button onclick="add(3,'Jabón',3900)">Agregar</button>
-</div>
-
-</div>
-
-</div>
-
-<script>
-function getCart(){
-return JSON.parse(localStorage.getItem("cart")||"[]")
-}
-
-function saveCart(c){
-localStorage.setItem("cart",JSON.stringify(c))
-}
-
-function add(id,name,price){
-let c=getCart()
-let p=c.find(x=>x.id==id)
-
-if(p){p.qty++}
-else{c.push({id,name,price,qty:1})}
-
-saveCart(c)
-alert("Agregado al carrito")
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
