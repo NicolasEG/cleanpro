@@ -1,273 +1,89 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nova Clean</title>
+          <div class="banner-mini">
+            <strong>Escalable</strong>
+            <span>Listo para crecer luego</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <section class="section" style="padding-top:10px;">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Productos destacados</h2>
+        </div>
+        <p>
+          Una muestra de cómo podrían verse los productos en la web con cards grandes, precio visible y botón de compra.
+        </p>
+      </div>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+      <div class="grid-3">
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=900&q=80" alt="Lavandina">
+          </div>
+          <div class="card-body">
+            <span class="pill">Top ventas</span>
+            <h3>Lavandina x 1L</h3>
+            <p>Ideal para desinfección diaria en hogares, comercios y espacios de trabajo.</p>
+            <div class="price-row">
+              <div>
+                <div class="price">$2.500</div>
+                <div class="small-muted">Precio sugerido</div>
+              </div>
+            </div>
+            <button class="btn add-btn" onclick="addToCart('Lavandina x 1L', 2500, 'https://images.unsplash.com/photo-1626806787461-102c1bfaaea1?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
 
-body{background:#f3f6fb;color:#0f172a;}
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=900&q=80" alt="Detergente">
+          </div>
+          <div class="card-body">
+            <span class="pill">Recomendado</span>
+            <h3>Detergente concentrado</h3>
+            <p>Rinde más y aporta una imagen de catálogo más profesional y completa.</p>
+            <div class="price-row">
+              <div>
+                <div class="price">$3.800</div>
+                <div class="small-muted">Precio sugerido</div>
+              </div>
+            </div>
+            <button class="btn add-btn" onclick="addToCart('Detergente concentrado', 3800, 'https://images.unsplash.com/photo-1604335399105-a0c585fd81a1?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
 
-/* NAV */
-.header{
-position:fixed;
-top:0;
-width:100%;
-background:#0f172a;
-z-index:100;
-}
+        <article class="card product-card">
+          <div class="card-img">
+            <img src="https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80" alt="Pack esponjas">
+          </div>
+          <div class="card-body">
+            <span class="pill">Oferta</span>
+            <h3>Pack esponjas premium</h3>
+            <p>Perfecto para acompañar el catálogo con artículos de alta rotación y compra impulsiva.</p>
+            <div class="price-row">
+              <div>
+                <div class="price">$1.950</div>
+                <div class="small-muted">Precio sugerido</div>
+              </div>
+            </div>
+            <button class="btn add-btn" onclick="addToCart('Pack esponjas premium', 1950, 'https://images.unsplash.com/photo-1583947582886-f40ec95dd752?auto=format&fit=crop&w=900&q=80')">Agregar al carrito</button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-.nav{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-padding:18px;
-}
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>NOVA CLEAN</strong> · Venta de productos de limpieza</div>
+      <div>Diseño demo moderno para presentación comercial</div>
+    </div>
+  </footer>
 
-.nav a{
-color:#cbd5e1;
-text-decoration:none;
-margin:0 10px;
-}
-
-.nav a:hover{color:white;}
-
-.btn{
-background:#1e293b;
-padding:8px 15px;
-border-radius:20px;
-color:white;
-}
-
-/* HERO */
-.hero{
-margin-top:70px;
-background:linear-gradient(90deg,#0f172a,#1e293b);
-color:white;
-padding:80px 20px;
-}
-
-.hero-container{
-max-width:1200px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.hero h1{font-size:48px;}
-.hero p{margin-top:10px;color:#94a3b8;}
-
-.hero button{
-margin-top:20px;
-padding:12px 25px;
-border:none;
-border-radius:25px;
-background:white;
-color:black;
-cursor:pointer;
-}
-
-/* CATEGORIAS */
-.section{
-max-width:1200px;
-margin:auto;
-padding:60px 20px;
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.card{
-background:white;
-border-radius:15px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-overflow:hidden;
-}
-
-.card img{width:100%;height:180px;object-fit:cover;}
-.card-content{padding:15px;}
-
-/* DESTACADOS */
-.products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:20px;
-}
-
-.product{
-background:white;
-border-radius:15px;
-padding:15px;
-text-align:center;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.product img{
-width:100%;
-height:160px;
-object-fit:cover;
-}
-
-.product button{
-margin-top:10px;
-padding:8px;
-background:#0f172a;
-color:white;
-border:none;
-border-radius:20px;
-}
-
-/* CTA */
-.cta{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:60px;
-}
-
-.cta button{
-margin-top:20px;
-padding:12px 25px;
-border:none;
-background:white;
-border-radius:25px;
-}
-
-/* FOOTER */
-.footer{
-background:#020617;
-color:#94a3b8;
-text-align:center;
-padding:30px;
-}
-
-@media(max-width:900px){
-.grid,.products{grid-template-columns:1fr;}
-.hero-container{flex-direction:column;}
-}
-</style>
-</head>
-
-<body>
-
-<!-- NAV -->
-<div class="header">
-<div class="nav">
-<strong style="color:white;">NOVA CLEAN</strong>
-
-<div>
-<a href="index.html">Inicio</a>
-<a href="productos.html">Productos</a>
-<a href="carrito.html">Carrito</a>
-</div>
-
-<a href="carrito.html" class="btn">Ver carrito</a>
-</div>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-<div class="hero-container">
-
-<div>
-<h1>Productos de limpieza profesionales</h1>
-<p>Venta mayorista y minorista para hogar, comercio e industria</p>
-
-<button onclick="location.href='productos.html'">
-Ver productos
-</button>
-</div>
-
-<img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f?q=80&w=500">
-
-</div>
-</section>
-
-<!-- CATEGORIAS -->
-<section class="section">
-<h2>Categorías</h2>
-
-<div class="grid">
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
-<div class="card-content">Limpieza hogar</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1603712725038-e9334ae8f39f">
-<div class="card-content">Limpieza industrial</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
-<div class="card-content">Higiene personal</div>
-</div>
-
-<div class="card">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<div class="card-content">Desechables</div>
-</div>
-
-</div>
-</section>
-
-<!-- PRODUCTOS DESTACADOS -->
-<section class="section">
-<h2>Productos destacados</h2>
-
-<div class="products">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1583947215259-38e31be8751f">
-<h4>Detergente industrial</h4>
-<p>$6.200</p>
-<button>Agregar</button>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f">
-<h4>Jabón líquido</h4>
-<p>$3.900</p>
-<button>Agregar</button>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1585421514738-01798e348b17">
-<h4>Lavandina</h4>
-<p>$4.500</p>
-<button>Agregar</button>
-</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348">
-<h4>Pack descartables</h4>
-<p>$5.700</p>
-<button>Agregar</button>
-</div>
-
-</div>
-</section>
-
-<!-- CTA -->
-<section class="cta">
-<h2>Comprá online fácil y rápido</h2>
-<button onclick="location.href='productos.html'">Ir a tienda</button>
-</section>
-
-<!-- FOOTER -->
-<div class="footer">
-© Nova Clean - Venta de productos de limpieza
-</div>
-
+  <script src="script.js"></script>
 </body>
 </html>
