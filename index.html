@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LimpioShop | Inicio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>Limpio<span>Shop</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="productos.html">Productos</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-btn" href="productos.html" aria-label="Buscar">⌕</a>
+        <a class="icon-btn cart-badge" href="carrito.html" aria-label="Carrito">🛒 <b data-cart-count>0</b></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-box">
+          <img src="img/hero.png" alt="Hero LimpioShop" class="hero-image" />
+
+          <div class="hero-overlay"></div>
+
+          <div class="hero-content">
+            <span class="eyebrow">● Tienda online profesional para tu local</span>
+            <h1>Todo para tu <span>hogar y empresa</span></h1>
+            <p>
+              Una experiencia e-commerce moderna para vender limpieza, química, perfumería y artículos de piletas
+              con una imagen sobria, elegante y enfocada en la venta.
+            </p>
+            <div class="hero-actions">
+              <a href="productos.html" class="btn btn-primary">Ver productos</a>
+              <a href="carrito.html" class="btn btn-secondary">Ir al carrito</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container feature-row">
+        <article class="info-card">
+          <div class="icon">🚚</div>
+          <div>
+            <h3>Envíos a todo el país</h3>
+            <p>Presentación profesional, compra simple y foco en conversión desde cualquier dispositivo.</p>
+          </div>
+        </article>
+        <article class="info-card">
+          <div class="icon">%</div>
+          <div>
+            <h3>Ofertas y combos</h3>
+            <p>Espacios listos para destacar promociones sin sobrecargar el diseño ni volverlo infantil.</p>
+          </div>
+        </article>
+        <article class="info-card">
+          <div class="icon">◎</div>
+          <div>
+            <h3>Atención personalizada</h3>
+            <p>Una estética premium, clara y moderna para transmitir confianza al cliente desde el primer vistazo.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Categorías <span>principales</span></h2>
+            <p class="section-sub">Diseño equilibrado, sin priorizar visualmente un rubro por encima del otro. Todo mantiene una misma jerarquía elegante.</p>
+          </div>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card">
+            <span class="chip">Catálogo</span>
+            <div class="category-symbol">✦</div>
+            <div class="label">
+              <h3>Limpieza</h3>
+              <p>Productos de uso diario y profesional.</p>
+            </div>
+          </article>
+          <article class="category-card">
+            <span class="chip">Catálogo</span>
+            <div class="category-symbol">⚗</div>
+            <div class="label">
+              <h3>Química</h3>
+              <p>Artículos técnicos con una presencia visual sobria.</p>
+            </div>
+          </article>
+          <article class="category-card">
+            <span class="chip">Catálogo</span>
+            <div class="category-symbol">❋</div>
+            <div class="label">
+              <h3>Perfumería</h3>
+              <p>Fragancias y aromas integrados al mismo lenguaje visual.</p>
+            </div>
+          </article>
+          <article class="category-card">
+            <span class="chip">Catálogo</span>
+            <div class="category-symbol">◌</div>
+            <div class="label">
+              <h3>Piletas</h3>
+              <p>Sección profesional sin fondos cargados ni temáticos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container products-layout">
+        <aside class="sidebar">
+          <h3>Categorías</h3>
+          <div class="filter-list">
+            <a class="filter-link active" href="productos.html"><span>Todos los productos</span><span>→</span></a>
+            <a class="filter-link" href="productos.html"><span>Limpieza</span><span>→</span></a>
+            <a class="filter-link" href="productos.html"><span>Química</span><span>→</span></a>
+            <a class="filter-link" href="productos.html"><span>Perfumería</span><span>→</span></a>
+            <a class="filter-link" href="productos.html"><span>Piletas</span><span>→</span></a>
+          </div>
+        </aside>
+
+        <div>
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Productos <span>destacados</span></h2>
+              <p class="section-sub">Bloque central con cards oscuras, elegantes y preparadas para un catálogo visual más serio y vendible.</p>
+            </div>
+            <a href="productos.html" class="tag">Ver catálogo completo →</a>
+          </div>
+
+          <div class="product-grid" id="featured-grid"></div>
+
+          <div class="promo-banner">  
+            <div>
+              <h3>Una web lista para vender</h3>
+              <p>Inicio con hero protagonista pero controlado, grilla de productos moderna, navegación simple y carrito funcional. Exactamente las 3 páginas que necesitás.</p>
+            </div>
+            <a href="productos.html" class="btn btn-primary">Explorar productos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <div>© 2026 LimpioShop</div>
+      <div class="small">Inicio, productos y carrito. Nada más.</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

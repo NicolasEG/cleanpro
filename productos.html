@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LimpioShop | Productos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>Limpio<span>Shop</span></span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Inicio</a>
+        <a href="productos.html" class="active">Productos</a>
+        <a href="carrito.html">Carrito</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a class="icon-btn" href="productos.html" aria-label="Buscar">⌕</a>
+        <a class="icon-btn cart-badge" href="carrito.html" aria-label="Carrito">🛒 <b data-cart-count>0</b></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-box">
+          <h1>Catálogo profesional</h1>
+          <p>Una página de productos ordenada, simétrica y elegante, manteniendo el mismo estilo oscuro premium del render.</p>
+          <div class="toolbar">
+            <div class="search-box">
+              <span>⌕</span>
+              <input id="search-input" type="text" placeholder="Buscar producto..." />
+            </div>
+            <div class="sort-box">
+              <span>⇅</span>
+              <select id="sort-select">
+                <option value="default">Ordenar</option>
+                <option value="name">Nombre</option>
+                <option value="price-asc">Precio: menor a mayor</option>
+                <option value="price-desc">Precio: mayor a menor</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container products-layout">
+        <aside class="sidebar">
+          <h3>Filtrar por categoría</h3>
+          <div class="filter-list">
+            <a href="#" class="filter-link active" data-filter="all"><span>Todos</span><span>→</span></a>
+            <a href="#" class="filter-link" data-filter="limpieza"><span>Limpieza</span><span>→</span></a>
+            <a href="#" class="filter-link" data-filter="quimica"><span>Química</span><span>→</span></a>
+            <a href="#" class="filter-link" data-filter="perfumeria"><span>Perfumería</span><span>→</span></a>
+            <a href="#" class="filter-link" data-filter="piletas"><span>Piletas</span><span>→</span></a>
+          </div>
+        </aside>
+
+        <div>
+          <div class="section-header">
+            <div>
+              <h2 class="section-title">Todos los <span>productos</span></h2>
+              <p class="section-sub">Cards oscuras con buena separación visual, sombras suaves y botones claros para compra directa.</p>
+            </div>
+          </div>
+          <div class="product-grid" id="products-grid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-box">
+      <div>© 2026 LimpioShop</div>
+      <div class="small">Catálogo completo con búsqueda, filtros y carrito.</div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
